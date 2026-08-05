@@ -1,0 +1,9 @@
+{
+  "id": "ashley_childress",
+  "name": "Ashley Childress",
+  "role": "Statistician, Zoetis",
+  "avatar": "images/speaker_ashley.jpg",
+  "bio": "Ashley is an industrial statistician with expertise in Statistical Process Control (SPC), Design of Experiments (DOE), and Bayesian optimization models. She focuses on combining mathematical forecasting and predictive modeling to accelerate R&D discovery and eliminate optimization waste.",
+  "linkedin": "",
+  "talks": ["2025", "2021"]
+}

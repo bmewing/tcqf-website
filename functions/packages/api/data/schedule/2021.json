@@ -1,0 +1,51 @@
+[
+  {
+    "time": "9:00 AM - 10:00 AM",
+    "track": "Quality Technologies",
+    "title": "Expectations for corrective action responses from audit findings",
+    "speakerId": "",
+    "desc": "Covers what is expected from corrective action responses (for IATF/ISO/AS audit findings), common pitfalls, and risks of poor corrective actions."
+  },
+  {
+    "time": "9:00 AM - 10:00 AM",
+    "track": "Leadership/Improvement",
+    "title": "Leadership by Quality – An executive action guide to achieving enduring excellence and social responsibility",
+    "speakerId": "",
+    "desc": "Explores modern interpretations of Juran, Deming, and Ishikawa frameworks in light of increasing digital disruption and social responsibility expectations."
+  },
+  {
+    "time": "9:00 AM - 10:00 AM",
+    "track": "Healthcare",
+    "title": "Drug Additions: Current State and Structural Changes that can Help",
+    "speakerId": "",
+    "desc": "Addresses local drug addiction recovery models, treatment barriers, and structural health system changes."
+  },
+  {
+    "time": "10:00 AM - 11:00 AM",
+    "track": "Quality Technologies",
+    "title": "What is SPC (Statistical Process Control)?",
+    "speakerId": "ashley_childress",
+    "desc": "An introduction to basic Statistical Process Control mechanics and tool charts."
+  },
+  {
+    "time": "10:00 AM - 11:00 AM",
+    "track": "Leadership/Improvement",
+    "title": "Leading Remotely: New practices for leading remote teams",
+    "speakerId": "",
+    "desc": "Addresses how to keep remote team members engaged, design hybrid company cultures, and run effective virtual touchpoint meetings."
+  },
+  {
+    "time": "11:00 AM - 12:00 PM",
+    "track": "Quality Technologies",
+    "title": "SPC for Autocorrelated Data Using Automated Time Series Forecasting",
+    "speakerId": "",
+    "desc": "Advanced analysis of control charting methods adjusted for autocorrelated and serial process observations."
+  },
+  {
+    "time": "11:00 AM - 12:00 PM",
+    "track": "Leadership/Improvement",
+    "title": "Lean for Service",
+    "speakerId": "",
+    "desc": "An introduction to Lean concepts (eliminating waste and non-value adding efforts) tailored specifically for service-oriented organizations and workflows."
+  }
+]

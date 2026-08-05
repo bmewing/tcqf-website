@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - Tri-Cities Quality Forum Conference</title>
+    <meta name="description" content="View the full session lineup and schedules for the Tri-Cities Quality Forum annual events, featuring quality tools, AI integration, and leadership tracks.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link" id="logo-nav-link">
+                <img src="images/logo.png" alt="TCQF Logo" class="logo-img">
+                <div class="logo-text">
+                    TCQF
+                    <span>Quality Forum</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="main-navigation">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="register.html" class="nav-link" id="nav-register">Register</a>
+                <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
+                <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
+                <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
+                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section style="background-color: var(--primary); color: #ffffff; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 2.75rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Event Schedule</h1>
+            <p style="font-size: 1.15rem; color: #93c5fd; max-width: 600px; margin: 0 auto;">Select a year below to view current and historical schedule listings.</p>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="section">
+        <div class="container">
+            <div class="schedule-tabs-container">
+                <!-- Dynamic Year Tabs -->
+                <div class="schedule-tabs" id="year-tabs">
+                    <!-- Loaded dynamically via JavaScript -->
+                    <div class="eb-widget-loader" style="padding: 1rem 0;">
+                        <div class="spinner" style="width: 25px; height: 25px;"></div>
+                    </div>
+                </div>
+
+                <!-- Schedule Content Panel -->
+                <div class="schedule-content-panel active">
+                    <h2 class="schedule-year-header" id="selected-year-header">Loading schedule data...</h2>
+                    
+                    <!-- Dynamic Loading State -->
+                    <div class="eb-widget-loader" id="schedule-loader">
+                        <div class="spinner"></div>
+                        <p>Fetching session data...</p>
+                    </div>
+
+                    <!-- Dynamic Timeline -->
+                    <div class="timeline" id="timeline-container">
+                        <!-- Loaded dynamically via JavaScript -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-row">
+                        <img src="images/logo.png" alt="TCQF Logo" class="footer-logo">
+                        <span class="footer-brand-title">Tri-Cities Quality Forum</span>
+                    </div>
+                    <p class="footer-desc">
+                        Providing top-tier educational sessions on quality, leadership, and operational excellence completely free to attendees nationwide.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="register.html" class="footer-link">Register Now</a></li>
+                        <li><a href="schedule.html" class="footer-link">Session Schedule</a></li>
+                        <li><a href="speakers.html" class="footer-link">Featured Speakers</a></li>
+                        <li><a href="sponsors.html" class="footer-link">Sponsors & Exhibitors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Contact & Support</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@tcqualityforum.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Tri-Cities Region, TN/VA</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-video"></i>
+                        <span>Hosted virtually on Zoom</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-Cities Quality Forum. All rights reserved.</p>
+                <p>Designed for Digital Ocean Static Pages.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', async () => {
+            const tabsContainer = document.getElementById('year-tabs');
+            const timelineContainer = document.getElementById('timeline-container');
+            const loader = document.getElementById('schedule-loader');
+            const yearHeader = document.getElementById('selected-year-header');
+            // Helper to fetch data with local static file fallback
+            async function fetchAPI(endpoint, fallbackPath) {
+                try {
+                    const apiRes = await fetch(endpoint);
+                    if (apiRes.ok) {
+                        return await apiRes.json();
+                    }
+                    throw new Error(`API returned status ${apiRes.status}`);
+                } catch (err) {
+                    console.warn(`API fetch to ${endpoint} failed, falling back to static file ${fallbackPath}`, err);
+                    const fileRes = await fetch(fallbackPath);
+                    if (!fileRes.ok) throw new Error(`Static file fallback failed for ${fallbackPath}`);
+                    return await fileRes.json();
+                }
+            }
+
+            // Parse URL Query Parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            let activeYear = urlParams.get('year');
+            const targetSpeaker = urlParams.get('speaker');
+
+            // Cache to prevent duplicate speaker queries
+            const speakerCache = {};
+
+            // Helper to fetch speaker details
+            async function getSpeaker(speakerId) {
+                if (!speakerId) return null;
+                if (speakerCache[speakerId]) return speakerCache[speakerId];
+                
+                try {
+                    const data = await fetchAPI(
+                        `/api/data?type=speaker&id=${speakerId}`,
+                        `functions/packages/api/data/speakers/${speakerId}.json`
+                    );
+                    speakerCache[speakerId] = data;
+                    return data;
+                } catch (e) {
+                    console.error(`Failed to load speaker info for: ${speakerId}`, e);
+                    return null;
+                }
+            }
+
+            // Main Render Function
+            async function renderSchedule(year) {
+                // Show loader
+                if (loader) {
+                    loader.style.display = 'flex';
+                    // Reset loader content
+                    loader.innerHTML = '<div class="spinner"></div><p>Fetching session data...</p>';
+                }
+                timelineContainer.innerHTML = '';
+                
+                // Formatted titles for headers
+                let displayTitle = `${year} Session Lineup`;
+                if (year === '2025') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 13, 2025 (1:00 PM - 5:00 PM EST)`;
+                } else if (year === '2024') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 14, 2024 (Archive)`;
+                } else if (year === '2023') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 9, 2023 (Archive)`;
+                } else if (year === '2022') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 10, 2022 (Archive)`;
+                } else if (year === '2021') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 11, 2021 (Archive)`;
+                }
+                if (yearHeader) yearHeader.innerHTML = displayTitle;
+                
+                try {
+                    const sessions = await fetchAPI(
+                        `/api/data?type=schedule&year=${year}`,
+                        `functions/packages/api/data/schedule/${year}.json`
+                    );
+                    
+                    // Build timeline items
+                    const sessionPromises = sessions.map(async (session, index) => {
+                        const item = document.createElement('div');
+                        item.className = 'timeline-item';
+                        
+                        // Fetch speaker details if speakerId exists
+                        const speaker = await getSpeaker(session.speakerId);
+                        
+                        let speakerHtml = '';
+                        if (speaker) {
+                            speakerHtml = `
+                                <a href="speakers.html#${speaker.id}" class="timeline-speaker-link">
+                                    <img src="${speaker.avatar || 'images/logo.png'}" alt="${speaker.name}" class="timeline-speaker-avatar" onerror="this.src='images/logo.png'">
+                                    <span>${speaker.name} — ${speaker.role}</span>
+                                </a>
+                            `;
+                        }
+
+                        // Check highlight condition
+                        const isHighlighted = targetSpeaker && session.speakerId === targetSpeaker;
+                        const cardClass = isHighlighted ? 'timeline-card highlighted-session' : 'timeline-card';
+                        const cardId = isHighlighted ? 'highlighted-session-card' : `session-${index}`;
+
+                        item.innerHTML = `
+                            <div class="timeline-dot"></div>
+                            <div class="${cardClass}" id="${cardId}">
+                                <div class="timeline-header">
+                                    <span class="timeline-time-badge"><i class="fa-regular fa-clock"></i> ${session.time}</span>
+                                    ${session.track ? `<span class="timeline-track-badge">${session.track}</span>` : ''}
+                                </div>
+                                <h3 class="timeline-title">${session.title}</h3>
+                                ${speakerHtml}
+                                <p class="timeline-desc">${session.desc}</p>
+                            </div>
+                        `;
+                        return { element: item, highlighted: isHighlighted };
+                    });
+
+                    const renderedItems = await Promise.all(sessionPromises);
+                    
+                    if (loader) loader.style.display = 'none';
+
+                    renderedItems.forEach(itemObj => {
+                        timelineContainer.appendChild(itemObj.element);
+                    });
+
+                    // Smooth scroll to highlighted card if it exists
+                    if (targetSpeaker) {
+                        setTimeout(() => {
+                            const highlightedCard = document.getElementById('highlighted-session-card');
+                            if (highlightedCard) {
+                                highlightedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }, 400);
+                    }
+
+                } catch (err) {
+                    console.error('Error loading schedule:', err);
+                    if (loader) {
+                        loader.innerHTML = `<p style="color: var(--accent); font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load ${year} schedule.</p>`;
+                        const spinner = loader.querySelector('.spinner');
+                        if (spinner) spinner.style.display = 'none';
+                    }
+                }
+            }
+
+            try {
+                // Load Manifest
+                const manifest = await fetchAPI(
+                    '/api/data?type=manifest',
+                    'functions/packages/api/data/manifest.json'
+                );
+                
+                // Ensure activeYear is valid, or fallback to the latest year
+                if (!activeYear || !manifest.years.includes(activeYear)) {
+                    activeYear = manifest.years[0];
+                }
+
+                // Build Tabs Dynamically
+                tabsContainer.innerHTML = '';
+                manifest.years.forEach(year => {
+                    const btn = document.createElement('button');
+                    btn.className = `tab-btn ${year === activeYear ? 'active' : ''}`;
+                    btn.setAttribute('data-year', year);
+                    btn.id = `tab-${year}`;
+                    btn.innerText = year === manifest.years[0] ? `${year} Event` : `${year} Archive`;
+                    
+                    btn.addEventListener('click', () => {
+                        // Update active tab styling
+                        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        // Update URL parameter dynamically without refreshing page
+                        const newUrl = new URL(window.location);
+                        newUrl.searchParams.set('year', year);
+                        newUrl.searchParams.delete('speaker'); // Clear speaker highlight when toggling year
+                        window.history.pushState({}, '', newUrl);
+                        
+                        // Render schedule for selected year
+                        renderSchedule(year);
+                    });
+                    tabsContainer.appendChild(btn);
+                });
+
+                // Initial render
+                renderSchedule(activeYear);
+
+            } catch (e) {
+                console.error('Error initializing schedule tabs:', e);
+                if (loader) {
+                    loader.innerHTML = '<p style="color: var(--accent); font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load schedule tabs.</p>';
+                    const spinner = loader.querySelector('.spinner');
+                    if (spinner) spinner.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

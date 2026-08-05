@@ -1,0 +1,58 @@
+[
+  {
+    "time": "1:00 PM - 1:45 PM",
+    "track": "Track 1: Quality Techniques",
+    "title": "Remembering the Past, Building the Future — Dynamic Interactive Data Visualization",
+    "speakerId": "",
+    "desc": "Discusses straightforward rules on how to use new visualization methods and provides examples on how these visualizations will change quality management radically in the near future."
+  },
+  {
+    "time": "1:00 PM - 1:45 PM",
+    "track": "Track 2: Quality 4.0",
+    "title": "Quality 4.0: Don't Feel Overwhelmed. Feel Motivated.",
+    "speakerId": "",
+    "desc": "Embracing the future of quality and organizational excellence within the context of Industry 4.0. How quality professionals can guide their organizations through disruptive digital technologies."
+  },
+  {
+    "time": "1:45 PM - 2:30 PM",
+    "track": "Track 1: Quality Techniques",
+    "title": "Honoring Deming's 14 Points with Modular Kaizen",
+    "speakerId": "",
+    "desc": "A deep dive into restructuring Kaizen events to align with Deming's management points."
+  },
+  {
+    "time": "1:45 PM - 2:30 PM",
+    "track": "Track 2: Quality 4.0",
+    "title": "Mitigating Risks and Capturing Opportunities with AI",
+    "speakerId": "",
+    "desc": "Learn practical strategies for implementing a comprehensive AI risk management program that enables innovation while minimizing potential negative impacts."
+  },
+  {
+    "time": "2:30 PM - 3:15 PM",
+    "track": "Track 1: Quality Techniques",
+    "title": "Empower Employees Through Self-Management",
+    "speakerId": "",
+    "desc": "Strategies for creating ownership, self-directed team tasks, and higher operational engagement."
+  },
+  {
+    "time": "2:30 PM - 3:15 PM",
+    "track": "Track 2: Quality 4.0",
+    "title": "Reducing Design Cycles with Statistics and Machine Learning",
+    "speakerId": "",
+    "desc": "Case study and analysis of modeling techniques to shorten development sprint times."
+  },
+  {
+    "time": "3:15 PM - 4:00 PM",
+    "track": "Track 2: Quality 4.0",
+    "title": "Navigating the Challenges and Opportunities of Applying Generative AI",
+    "speakerId": "",
+    "desc": "Exploring the transformative potential of Large Language Models (LLMs) such as GPT and Claude in the realms of statistics, data science, and analytical fieldwork."
+  },
+  {
+    "time": "3:15 PM - 4:30 PM",
+    "track": "Track 1: Quality Techniques",
+    "title": "Energized Teams and Organization Success",
+    "speakerId": "",
+    "desc": "Interactive session on motivating team structures and sustaining continuous training."
+  }
+]

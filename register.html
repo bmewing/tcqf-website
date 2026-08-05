@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Tri-Cities Quality Forum Conference</title>
+    <meta name="description" content="Secure your free registration ticket for the Tri-Cities Quality Forum annual event using our secure Eventbrite integration.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link" id="logo-nav-link">
+                <img src="images/logo.png" alt="TCQF Logo" class="logo-img">
+                <div class="logo-text">
+                    TCQF
+                    <span>Quality Forum</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="main-navigation">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="register.html" class="nav-link" id="nav-register">Register</a>
+                <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
+                <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
+                <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
+                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section style="background-color: var(--primary); color: #ffffff; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 2.75rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Register for the Forum</h1>
+            <p style="font-size: 1.15rem; color: #93c5fd; max-width: 600px; margin: 0 auto;">Secure your free virtual pass to our upcoming forum sessions. Eventbrite integration is embedded below.</p>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="section">
+        <div class="container">
+            <div class="registration-container" id="eb-registration-wrap">
+                <!-- Registration Loading state -->
+                <div class="eb-widget-loader" id="eb-loader">
+                    <div class="spinner"></div>
+                    <p>Connecting to Eventbrite...</p>
+                </div>
+                
+                <!-- Eventbrite Widget Container -->
+                <div id="eventbrite-widget-container-742198986147"></div>
+            </div>
+            
+            <div style="max-width: 800px; margin: 2rem auto 0; text-align: center; color: #64748b; font-size: 0.9rem;">
+                <p><i class="fa-solid fa-lock" style="color: var(--primary-light);"></i> Secure checkout powered by Eventbrite. Registration is entirely free.</p>
+                <p style="margin-top: 0.5rem;">If the form does not load, you can also <a href="https://www.eventbrite.com/e/1578560991419" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">register directly on Eventbrite</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-row">
+                        <img src="images/logo.png" alt="TCQF Logo" class="footer-logo">
+                        <span class="footer-brand-title">Tri-Cities Quality Forum</span>
+                    </div>
+                    <p class="footer-desc">
+                        Providing top-tier educational sessions on quality, leadership, and operational excellence completely free to attendees nationwide.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="register.html" class="footer-link">Register Now</a></li>
+                        <li><a href="schedule.html" class="footer-link">Session Schedule</a></li>
+                        <li><a href="speakers.html" class="footer-link">Featured Speakers</a></li>
+                        <li><a href="sponsors.html" class="footer-link">Sponsors & Exhibitors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Contact & Support</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@tcqualityforum.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Tri-Cities Region, TN/VA</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-video"></i>
+                        <span>Hosted virtually on Zoom</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-Cities Quality Forum. All rights reserved.</p>
+                <p>Designed for Digital Ocean Static Pages.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    
+    <!-- Eventbrite Widget Loader Script -->
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+    <script type="text/javascript">
+        var exampleCallback = function() {
+            console.log('Order complete!');
+        };
+
+        try {
+            window.EBWidgets.createWidget({
+                // Required
+                widgetType: 'checkout',
+                eventId: '1578560991419',
+                iframeContainerId: 'eventbrite-widget-container-742198986147',
+
+                // Optional
+                iframeContainerHeight: 600,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+                onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+            });
+            
+            // Hide the spinner once the widget initializes
+            // Since the widget might take a brief second, we can hide the loader after a short timeout or listen for iframe loading
+            setTimeout(function() {
+                var loader = document.getElementById('eb-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }, 1500);
+        } catch (e) {
+            console.error('Failed to load Eventbrite widget:', e);
+            var loaderText = document.querySelector('#eb-loader p');
+            if (loaderText) {
+                loaderText.innerHTML = 'Could not initialize Eventbrite widget. Please <a href="https://www.eventbrite.com/e/1578560991419" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;text-decoration:underline;">click here to register on Eventbrite</a>.';
+            }
+            var spinner = document.querySelector('#eb-loader .spinner');
+            if (spinner) {
+                spinner.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

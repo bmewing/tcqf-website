@@ -1,0 +1,30 @@
+# DigitalOcean App Platform Configuration Spec
+# =============================================================================
+# This file defines the deployment structure on the DigitalOcean App Platform.
+# It hosts our static HTML/CSS/JS frontend and serverless Node.js functions.
+# =============================================================================
+
+name: tcqf-website
+region: nyc
+
+# Static Web Application Component (Frontend)
+static_sites:
+  - name: frontend
+    github:
+      repo: bmewing/tcqf-website
+      branch: main
+    build_command: ""
+    output_dir: /
+    error_document: index.html
+    routes:
+      - path: /
+
+# Serverless Functions Component (Backend API)
+functions:
+  - name: api
+    github:
+      repo: bmewing/tcqf-website
+      branch: main
+    source_dir: functions
+    routes:
+      - path: /api

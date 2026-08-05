@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers - Tri-Cities Quality Forum Conference</title>
+    <meta name="description" content="Meet the industry leaders, statisticians, and organizational experts speaking at the Tri-Cities Quality Forum.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link" id="logo-nav-link">
+                <img src="images/logo.png" alt="TCQF Logo" class="logo-img">
+                <div class="logo-text">
+                    TCQF
+                    <span>Quality Forum</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="main-navigation">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="register.html" class="nav-link" id="nav-register">Register</a>
+                <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
+                <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
+                <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
+                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section style="background-color: var(--primary); color: #ffffff; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 2.75rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Featured Speakers</h1>
+            <p style="font-size: 1.15rem; color: #93c5fd; max-width: 600px; margin: 0 auto;">Meet the professional leaders and experts presenting at the Tri-Cities Quality Forum.</p>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="section">
+        <div class="container">
+            <div class="speakers-grid" id="speakers-grid">
+                <!-- Loading State -->
+                <div class="eb-widget-loader" id="speakers-loader">
+                    <div class="spinner"></div>
+                    <p>Loading speakers...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-row">
+                        <img src="images/logo.png" alt="TCQF Logo" class="footer-logo">
+                        <span class="footer-brand-title">Tri-Cities Quality Forum</span>
+                    </div>
+                    <p class="footer-desc">
+                        Providing top-tier educational sessions on quality, leadership, and operational excellence completely free to attendees nationwide.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="register.html" class="footer-link">Register Now</a></li>
+                        <li><a href="schedule.html" class="footer-link">Session Schedule</a></li>
+                        <li><a href="speakers.html" class="footer-link">Featured Speakers</a></li>
+                        <li><a href="sponsors.html" class="footer-link">Sponsors & Exhibitors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Contact & Support</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@tcqualityforum.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Tri-Cities Region, TN/VA</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-video"></i>
+                        <span>Hosted virtually on Zoom</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-Cities Quality Forum. All rights reserved.</p>
+                <p>Designed for Digital Ocean Static Pages.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('speakers-grid');
+            const loader = document.getElementById('speakers-loader');
+
+            // Helper to fetch data with local static file fallback
+            async function fetchAPI(endpoint, fallbackPath) {
+                try {
+                    const apiRes = await fetch(endpoint);
+                    if (apiRes.ok) {
+                        return await apiRes.json();
+                    }
+                    throw new Error(`API returned status ${apiRes.status}`);
+                } catch (err) {
+                    console.warn(`API fetch to ${endpoint} failed, falling back to static file ${fallbackPath}`, err);
+                    const fileRes = await fetch(fallbackPath);
+                    if (!fileRes.ok) throw new Error(`Static file fallback failed for ${fallbackPath}`);
+                    return await fileRes.json();
+                }
+            }
+
+            try {
+                // 1. Fetch manifest to get list of speaker ids
+                const manifest = await fetchAPI(
+                    '/api/data?type=manifest',
+                    'functions/packages/api/data/manifest.json'
+                );
+                
+                // 2. Fetch details for each speaker
+                const speakerPromises = manifest.speakers.map(async (id) => {
+                    try {
+                        return await fetchAPI(
+                            `/api/data?type=speaker&id=${id}`,
+                            `functions/packages/api/data/speakers/${id}.json`
+                        );
+                    } catch (err) {
+                        console.error(`Error loading speaker ${id}:`, err);
+                        return null;
+                    }
+                });
+                
+                const speakers = (await Promise.all(speakerPromises)).filter(s => s !== null);
+
+                
+                // Remove loader
+                if (loader) loader.style.display = 'none';
+                
+                // 3. Render each speaker
+                speakers.forEach(speaker => {
+                    const card = document.createElement('div');
+                    card.className = 'speaker-card';
+                    card.id = speaker.id;
+                    
+                    // Generate talk links
+                    let talksHtml = '';
+                    if (speaker.talks && speaker.talks.length > 0) {
+                        talksHtml = `
+                            <div class="speaker-talks-container" style="margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 0.75rem;">
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 0.5rem; font-weight: 600; text-align: center;">Speaking in:</span>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                                    ${speaker.talks.map(year => `
+                                        <a href="schedule.html?year=${year}&speaker=${speaker.id}" class="timeline-time-badge" style="font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; transition: all var(--transition-speed); font-family: var(--font-heading); font-weight: 600;">
+                                            <i class="fa-regular fa-calendar-days"></i> ${year} Event
+                                        </a>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    // Social Links Markup
+                    let socialIconHtml = `
+                        <span class="social-icon" style="opacity: 0.5;" title="No social profile link available">
+                            <i class="fa-solid fa-link-slash"></i>
+                        </span>
+                    `;
+                    if (speaker.linkedin) {
+                        socialIconHtml = `
+                            <a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="${speaker.name} LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        `;
+                    }
+
+                    card.innerHTML = `
+                        <div class="speaker-image-container">
+                            <img src="${speaker.avatar || 'images/logo.png'}" alt="${speaker.name}" class="speaker-image" onerror="this.src='images/logo.png'">
+                        </div>
+                        <div class="speaker-info">
+                            <h2 class="speaker-name">${speaker.name}</h2>
+                            <h3 class="speaker-role">${speaker.role}</h3>
+                            <p class="speaker-bio">${speaker.bio}</p>
+                            <div class="speaker-socials">
+                                ${socialIconHtml}
+                            </div>
+                            ${talksHtml}
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (e) {
+                console.error('Error rendering speakers list:', e);
+                if (loader) {
+                    loader.innerHTML = '<p style="color: var(--accent); font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load speakers. Please refresh or check console errors.</p>';
+                    const spinner = loader.querySelector('.spinner');
+                    if (spinner) spinner.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "time": "9:00 AM - 9:50 AM",
+    "track": "Track 1",
+    "title": "Organizational Improvement Using the Baldrige Framework",
+    "speakerId": "david_jones",
+    "desc": "A walkthrough of easy-to-apply methods for using the Baldrige Excellence Framework to assess operations and drive systemic improvement."
+  },
+  {
+    "time": "9:00 AM - 9:50 AM",
+    "track": "Track 2",
+    "title": "Executive Summary of 100 Years of Harvard Business Review: What \"Big Ideas\" Will You Start/Stop Doing?",
+    "speakerId": "",
+    "desc": "A dynamic breakdown of key milestones and frameworks introduced in the HBR over the past century."
+  },
+  {
+    "time": "10:00 AM - 10:50 AM",
+    "track": "Track 1",
+    "title": "Using a Leadership System to Create a Culture of Agility and Continuous Improvement",
+    "speakerId": "",
+    "desc": "Learn how to establish an integrated leadership workflow to transition from firefighting to aligned priorities and consistent recognition."
+  },
+  {
+    "time": "10:00 AM - 10:50 AM",
+    "track": "Track 2",
+    "title": "The Golden Triangle of Empathy, Insight, And Hope — Connecting What You Do to What Customers Want",
+    "speakerId": "",
+    "desc": "Explores why viewing products and processes through your customer's eyes is vital for emotional bonding and long-term brand relationships."
+  },
+  {
+    "time": "11:00 AM - 11:50 AM",
+    "track": "Track 1",
+    "title": "Stop Hiring Turkeys",
+    "speakerId": "",
+    "desc": "Highlights simple steps that can noticeably improve hiring success and select candidates that fit long-term operations goals."
+  },
+  {
+    "time": "11:00 AM - 11:50 AM",
+    "track": "Track 2",
+    "title": "Agile Lean Six Sigma — Hacking Lean Six Sigma for Results",
+    "speakerId": "",
+    "desc": "How to leverage modern software tools and the Magnificent Seven Quality Tools to train team members and get bottom-line results in a day or two."
+  },
+  {
+    "time": "12:00 PM - 12:50 PM",
+    "track": "Track 1",
+    "title": "Shape Your Future using Strategic Planning",
+    "speakerId": "",
+    "desc": "An introduction to a straightforward, proactive strategic planning workflow that leaders can immediately apply to companies and personal development."
+  },
+  {
+    "time": "12:00 PM - 12:50 PM",
+    "track": "Track 2",
+    "title": "Improving your Organization Using Real Time Customers' Feedback — A case study to create happiness",
+    "speakerId": "",
+    "desc": "Compares CSAT, CES, and NPS metrics. Demonstrates how to use real-time tech integrations to collect feedback and close service loops with employees."
+  }
+]

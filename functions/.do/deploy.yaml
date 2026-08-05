@@ -1,0 +1,11 @@
+packages:
+  - name: api
+    shared: {}
+    environment: {}
+    functions:
+      - name: data
+        runtime: nodejs:18
+        web: true
+        limits:
+          timeout: 10000
+          memory: 128

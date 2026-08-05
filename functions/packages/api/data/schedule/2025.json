@@ -1,0 +1,30 @@
+[
+  {
+    "time": "1:00 PM - 1:50 PM",
+    "track": "Keynote Focus",
+    "title": "Achieving Excellence by Focusing on Key Customer Requirements",
+    "speakerId": "chuck_gault",
+    "desc": "Our customers have some of manufacturing’s highest quality standards. Their stated expectations are zero defects. Getting our 60 team members to focus on our key customer requirements has made a clear, measurable difference in our ability to meet our customers’ expectations and achieve excellence every day."
+  },
+  {
+    "time": "2:00 PM - 2:50 PM",
+    "track": "Quality 4.0",
+    "title": "The Next Evolution of Quality: Practical AI Tools That Improve Operations",
+    "speakerId": "levi_mcpherson",
+    "desc": "Artificial Intelligence is transforming how organizations design, document, and improve their processes. In this session, Levi McPherson demonstrates how quality and operations professionals can use practical, no-code AI tools to enhance existing systems of excellence—without abandoning proven frameworks like ISO 9001, Baldrige, Lean, or Six Sigma."
+  },
+  {
+    "time": "3:00 PM - 3:50 PM",
+    "track": "Leadership Excellence",
+    "title": "How a Hurricane, a Wedding, and the Trek of a Lifetime Apply to Your Organization's Success",
+    "speakerId": "david_jones",
+    "desc": "David isn’t just known for his business acumen. In 2024, he became a symbol of relentless determination when he trekked through the devastation left by Hurricane Helene to walk his daughter Elizabeth down the aisle. With no cell service or internet, what should have been a two-hour drive turned into a treacherous, 17-mile overnight trek on foot—one that captivated hearts around the world. Learn how these lessons in alignment and determination map directly to organizational success."
+  },
+  {
+    "time": "4:00 PM - 4:50 PM",
+    "track": "Advanced Quality Science",
+    "title": "Guided Discovery: Combining Bayesian Optimization with DOE for Material Discovery and Continuous Improvement",
+    "speakerId": "ashley_childress",
+    "desc": "Bayesian Optimization is an approach that helps speed up the discovery of new materials by guiding experiments toward the most promising areas in an efficient and strategic way. The method balances experimentation in unexplored spaces as well as high-performing regions to accelerate discovery and minimize cycle iterations."
+  }
+]
