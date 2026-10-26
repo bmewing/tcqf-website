@@ -17,18 +17,17 @@
             <a href="index.html" class="logo-link" id="logo-nav-link">
                 <img src="images/logo.png" alt="TCQF Logo" class="logo-img">
                 <div class="logo-text">
-                    TCQF
+                    Tri-Cities
                     <span>Quality Forum</span>
                 </div>
             </a>
             
             <nav class="nav" id="main-navigation">
                 <a href="index.html" class="nav-link" id="nav-home">Home</a>
-                <a href="register.html" class="nav-link" id="nav-register">Register</a>
                 <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
                 <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
                 <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
-                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register Now</a>
+                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register</a>
             </nav>
 
             <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
@@ -40,10 +39,10 @@
     </header>
 
     <!-- Page Title -->
-    <section style="background-color: var(--primary); color: #ffffff; padding: 4rem 0; text-align: center;">
+    <section class="page-head">
         <div class="container">
-            <h1 style="font-size: 2.75rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Event Schedule</h1>
-            <p style="font-size: 1.15rem; color: #93c5fd; max-width: 600px; margin: 0 auto;">Select a year below to view current and historical schedule listings.</p>
+            <h1>Schedule</h1>
+            <p>The program for this year's forum, plus every lineup back to 2021.</p>
         </div>
     </section>
 
@@ -54,8 +53,8 @@
                 <!-- Dynamic Year Tabs -->
                 <div class="schedule-tabs" id="year-tabs">
                     <!-- Loaded dynamically via JavaScript -->
-                    <div class="eb-widget-loader" style="padding: 1rem 0;">
-                        <div class="spinner" style="width: 25px; height: 25px;"></div>
+                    <div class="eb-widget-loader">
+                        <div class="spinner"></div>
                     </div>
                 </div>
 
@@ -89,24 +88,24 @@
                         <span class="footer-brand-title">Tri-Cities Quality Forum</span>
                     </div>
                     <p class="footer-desc">
-                        Providing top-tier educational sessions on quality, leadership, and operational excellence completely free to attendees nationwide.
+                        An annual afternoon of sessions on quality, leadership, and operational excellence, free to attendees nationwide.
                     </p>
                 </div>
                 <div>
-                    <h3 class="footer-section-title">Quick Links</h3>
+                    <h3 class="footer-section-title">Pages</h3>
                     <ul class="footer-links">
                         <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="register.html" class="footer-link">Register Now</a></li>
-                        <li><a href="schedule.html" class="footer-link">Session Schedule</a></li>
-                        <li><a href="speakers.html" class="footer-link">Featured Speakers</a></li>
-                        <li><a href="sponsors.html" class="footer-link">Sponsors & Exhibitors</a></li>
+                        <li><a href="register.html" class="footer-link">Register</a></li>
+                        <li><a href="schedule.html" class="footer-link">Schedule</a></li>
+                        <li><a href="speakers.html" class="footer-link">Speakers</a></li>
+                        <li><a href="sponsors.html" class="footer-link">Sponsors</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="footer-section-title">Contact & Support</h3>
+                    <h3 class="footer-section-title">Contact</h3>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-envelope"></i>
-                        <span>info@tcqualityforum.com</span>
+                        <a href="mailto:info@tcqualityforum.com" class="footer-link">info@tcqualityforum.com</a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
@@ -120,7 +119,6 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Tri-Cities Quality Forum. All rights reserved.</p>
-                <p>Designed for Digital Ocean Static Pages.</p>
             </div>
         </div>
     </footer>
@@ -179,6 +177,7 @@
                 // Show loader
                 if (loader) {
                     loader.style.display = 'flex';
+                    loader.className = 'eb-widget-loader';
                     // Reset loader content
                     loader.innerHTML = '<div class="spinner"></div><p>Fetching session data...</p>';
                 }
@@ -186,8 +185,10 @@
                 
                 // Formatted titles for headers
                 let displayTitle = `${year} Session Lineup`;
-                if (year === '2025') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 13, 2025 (1:00 PM - 5:00 PM EST)`;
+                if (year === '2026') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 12, 2026 (1:00 PM - 5:00 PM ET)`;
+                } else if (year === '2025') {
+                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 13, 2025 (Archive)`;
                 } else if (year === '2024') {
                     displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 14, 2024 (Archive)`;
                 } else if (year === '2023') {
@@ -204,7 +205,16 @@
                         `/api/data?type=schedule&year=${year}`,
                         `functions/packages/api/data/schedule/${year}.json`
                     );
-                    
+
+                    // Schedule not yet announced
+                    if (sessions.length === 0) {
+                        if (loader) {
+                            loader.className = 'schedule-empty';
+                            loader.innerHTML = `<p>The ${year} lineup will be posted here soon. Register now and you'll be ready when it's announced.</p><a href="register.html" class="btn btn-primary">Register for free</a>`;
+                        }
+                        return;
+                    }
+
                     // Build timeline items
                     const sessionPromises = sessions.map(async (session, index) => {
                         const item = document.createElement('div');
@@ -218,7 +228,7 @@
                             speakerHtml = `
                                 <a href="speakers.html#${speaker.id}" class="timeline-speaker-link">
                                     <img src="${speaker.avatar || 'images/logo.png'}" alt="${speaker.name}" class="timeline-speaker-avatar" onerror="this.src='images/logo.png'">
-                                    <span>${speaker.name} — ${speaker.role}</span>
+                                    <span>${speaker.name}, ${speaker.role}</span>
                                 </a>
                             `;
                         }
@@ -264,7 +274,7 @@
                 } catch (err) {
                     console.error('Error loading schedule:', err);
                     if (loader) {
-                        loader.innerHTML = `<p style="color: var(--accent); font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load ${year} schedule.</p>`;
+                        loader.innerHTML = `<p class="load-error"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load ${year} schedule.</p>`;
                         const spinner = loader.querySelector('.spinner');
                         if (spinner) spinner.style.display = 'none';
                     }
@@ -315,7 +325,7 @@
             } catch (e) {
                 console.error('Error initializing schedule tabs:', e);
                 if (loader) {
-                    loader.innerHTML = '<p style="color: var(--accent); font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load schedule tabs.</p>';
+                    loader.innerHTML = '<p class="load-error"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load schedule tabs.</p>';
                     const spinner = loader.querySelector('.spinner');
                     if (spinner) spinner.style.display = 'none';
                 }

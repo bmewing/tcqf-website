@@ -17,18 +17,17 @@
             <a href="index.html" class="logo-link" id="logo-nav-link">
                 <img src="images/logo.png" alt="TCQF Logo" class="logo-img">
                 <div class="logo-text">
-                    TCQF
+                    Tri-Cities
                     <span>Quality Forum</span>
                 </div>
             </a>
             
             <nav class="nav" id="main-navigation">
                 <a href="index.html" class="nav-link" id="nav-home">Home</a>
-                <a href="register.html" class="nav-link" id="nav-register">Register</a>
                 <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
                 <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
                 <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
-                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register Now</a>
+                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register</a>
             </nav>
 
             <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
@@ -40,10 +39,10 @@
     </header>
 
     <!-- Page Title -->
-    <section style="background-color: var(--primary); color: #ffffff; padding: 4rem 0; text-align: center;">
+    <section class="page-head">
         <div class="container">
-            <h1 style="font-size: 2.75rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Register for the Forum</h1>
-            <p style="font-size: 1.15rem; color: #93c5fd; max-width: 600px; margin: 0 auto;">Secure your free virtual pass to our upcoming forum sessions. Eventbrite integration is embedded below.</p>
+            <h1>Register for the forum</h1>
+            <p>Free registration for Thursday, November 12, 2026, 1:00 to 5:00 PM Eastern on Zoom.</p>
         </div>
     </section>
 
@@ -58,12 +57,12 @@
                 </div>
                 
                 <!-- Eventbrite Widget Container -->
-                <div id="eventbrite-widget-container-742198986147"></div>
+                <div id="eventbrite-widget-container-2003933010579"></div>
             </div>
             
-            <div style="max-width: 800px; margin: 2rem auto 0; text-align: center; color: #64748b; font-size: 0.9rem;">
-                <p><i class="fa-solid fa-lock" style="color: var(--primary-light);"></i> Secure checkout powered by Eventbrite. Registration is entirely free.</p>
-                <p style="margin-top: 0.5rem;">If the form does not load, you can also <a href="https://www.eventbrite.com/e/1578560991419" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline;">register directly on Eventbrite</a>.</p>
+            <div class="registration-note">
+                <p><i class="fa-solid fa-lock"></i> Checkout is handled securely by Eventbrite. Registration is free.</p>
+                <p>If the form doesn't load, <a href="https://www.eventbrite.com/e/2026-tri-cities-quality-forum-registration-2003933010579" target="_blank" rel="noopener noreferrer" class="text-link">register directly on Eventbrite</a>.</p>
             </div>
         </div>
     </section>
@@ -78,24 +77,24 @@
                         <span class="footer-brand-title">Tri-Cities Quality Forum</span>
                     </div>
                     <p class="footer-desc">
-                        Providing top-tier educational sessions on quality, leadership, and operational excellence completely free to attendees nationwide.
+                        An annual afternoon of sessions on quality, leadership, and operational excellence, free to attendees nationwide.
                     </p>
                 </div>
                 <div>
-                    <h3 class="footer-section-title">Quick Links</h3>
+                    <h3 class="footer-section-title">Pages</h3>
                     <ul class="footer-links">
                         <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="register.html" class="footer-link">Register Now</a></li>
-                        <li><a href="schedule.html" class="footer-link">Session Schedule</a></li>
-                        <li><a href="speakers.html" class="footer-link">Featured Speakers</a></li>
-                        <li><a href="sponsors.html" class="footer-link">Sponsors & Exhibitors</a></li>
+                        <li><a href="register.html" class="footer-link">Register</a></li>
+                        <li><a href="schedule.html" class="footer-link">Schedule</a></li>
+                        <li><a href="speakers.html" class="footer-link">Speakers</a></li>
+                        <li><a href="sponsors.html" class="footer-link">Sponsors</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="footer-section-title">Contact & Support</h3>
+                    <h3 class="footer-section-title">Contact</h3>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-envelope"></i>
-                        <span>info@tcqualityforum.com</span>
+                        <a href="mailto:info@tcqualityforum.com" class="footer-link">info@tcqualityforum.com</a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
@@ -109,7 +108,6 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Tri-Cities Quality Forum. All rights reserved.</p>
-                <p>Designed for Digital Ocean Static Pages.</p>
             </div>
         </div>
     </footer>
@@ -128,8 +126,8 @@
             window.EBWidgets.createWidget({
                 // Required
                 widgetType: 'checkout',
-                eventId: '1578560991419',
-                iframeContainerId: 'eventbrite-widget-container-742198986147',
+                eventId: '2003933010579',
+                iframeContainerId: 'eventbrite-widget-container-2003933010579',
 
                 // Optional
                 iframeContainerHeight: 600,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
@@ -148,7 +146,7 @@
             console.error('Failed to load Eventbrite widget:', e);
             var loaderText = document.querySelector('#eb-loader p');
             if (loaderText) {
-                loaderText.innerHTML = 'Could not initialize Eventbrite widget. Please <a href="https://www.eventbrite.com/e/1578560991419" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:600;text-decoration:underline;">click here to register on Eventbrite</a>.';
+                loaderText.innerHTML = 'The registration form could not load. Please <a href="https://www.eventbrite.com/e/2026-tri-cities-quality-forum-registration-2003933010579" target="_blank" rel="noopener noreferrer" class="text-link">register directly on Eventbrite</a>.';
             }
             var spinner = document.querySelector('#eb-loader .spinner');
             if (spinner) {
