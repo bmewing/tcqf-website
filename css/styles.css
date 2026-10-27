@@ -1,9 +1,8 @@
 /*
    Tri-Cities Quality Forum
    Colors come from the logo: the ink of the Q and the green of its stars.
-   Type is Archivo; the wide cut carries headings. The event name in the
-   hero and the page titles use Cabin, a humanist sans close to the logo's
-   wordmark.
+   Headings use Cabin, a humanist sans close to the logo's wordmark;
+   body text uses Archivo.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Cabin:wght@400..700&display=swap');
@@ -23,7 +22,6 @@
     /* Type */
     --font: 'Archivo', system-ui, sans-serif;
     --font-brand: 'Cabin', 'Gill Sans', 'Gill Sans MT', system-ui, sans-serif;
-    --wide: 118%;
 
     /* Layout */
     --container-width: 1160px;
@@ -77,9 +75,8 @@ a {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font);
-    font-stretch: var(--wide);
-    font-weight: 750;
+    font-family: var(--font-brand);
+    font-weight: 700;
     line-height: 1.15;
     color: var(--ink);
     letter-spacing: -0.01em;
@@ -1253,9 +1250,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-brand-title {
-    font-stretch: var(--wide);
-    font-size: 1.125rem;
-    font-weight: 750;
+    font-family: var(--font-brand);
+    font-size: 1.1875rem;
+    font-weight: 700;
 }
 
 .footer-desc {
