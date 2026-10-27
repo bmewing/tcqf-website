@@ -1,10 +1,11 @@
 /*
    Tri-Cities Quality Forum
    Colors come from the logo: the ink of the Q and the green of its stars.
-   Type is a single family (Archivo); the wide cut carries headings.
+   Type is Archivo; the wide cut carries headings. The event name in the
+   hero uses Cabin, a humanist sans close to the logo's wordmark.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Cabin:wght@400..700&display=swap');
 
 :root {
     /* Color */
@@ -20,11 +21,12 @@
 
     /* Type */
     --font: 'Archivo', system-ui, sans-serif;
+    --font-brand: 'Cabin', 'Gill Sans', 'Gill Sans MT', system-ui, sans-serif;
     --wide: 118%;
 
     /* Layout */
     --container-width: 1160px;
-    --header-height: 76px;
+    --header-height: 84px;
     --radius: 4px;
     --transition-speed: 0.2s;
 }
@@ -153,23 +155,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-    height: 46px;
-    width: 46px;
-}
-
-.logo-text {
-    font-stretch: var(--wide);
-    font-size: 1.0625rem;
-    font-weight: 800;
-    color: var(--ink);
-    line-height: 1.1;
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-text span {
-    font-weight: 500;
-    color: var(--muted);
+    height: 64px;
+    width: auto;
 }
 
 .nav {
@@ -290,17 +277,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-stretch: 125%;
-    font-weight: 850;
+    font-family: var(--font-brand);
+    font-size: clamp(3.25rem, 9vw, 6.75rem);
+    font-stretch: normal;
+    font-weight: 700;
     line-height: 0.95;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     color: #ffffff;
     margin-bottom: 1.75rem;
 }
 
 .hero-title span {
     display: block;
+}
+
+/* Mirrors the logo: a light "Tri-Cities" line over a bold "Quality Forum" */
+.hero-title span:first-child {
+    font-weight: 400;
+    font-size: 0.5em;
+    letter-spacing: 0;
+    margin-bottom: 0.15em;
 }
 
 .hero-subtitle {
@@ -1376,7 +1372,11 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     :root {
-        --header-height: 68px;
+        --header-height: 72px;
+    }
+
+    .logo-img {
+        height: 54px;
     }
 
     .container {
