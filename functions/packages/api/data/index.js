@@ -116,6 +116,28 @@ function main(args) {
         }
     }
 
+    if (type === 'speakers') {
+        try {
+            let speakers = [];
+            if (fs.existsSync(speakersDir)) {
+                speakers = fs.readdirSync(speakersDir)
+                    .filter(file => file.endsWith('.json'))
+                    .map(file => JSON.parse(fs.readFileSync(path.join(speakersDir, file), 'utf8')));
+            }
+            return {
+                statusCode: 200,
+                headers: headers,
+                body: speakers
+            };
+        } catch (e) {
+            return {
+                statusCode: 500,
+                headers: headers,
+                body: { error: 'Failed to load speakers', details: e.message }
+            };
+        }
+    }
+
     return {
         statusCode: 400,
         headers: headers,

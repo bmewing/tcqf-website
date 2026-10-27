@@ -1,9 +1,11 @@
 {
   "id": "chuck_gault",
   "name": "Chuck Gault",
-  "role": "Founder and President, Kovlon",
-  "avatar": "images/speaker_chuck.jpg",
-  "bio": "Chuck is the Founder and President of Kovlon, a leading manufacturer known for maintaining some of the industry's highest quality standards. He has successfully led initiatives to focus manufacturing teams on zero defects and critical customer requirements to achieve day-to-day operations excellence.",
+  "role": "Founder and President, Max Coating",
+  "photo": "images/speakers/chuck_gault.jpg",
+  "bio": "Chuck Gault is the founder and President of Max Coating. The company has operated for 21 years. Chuck graduated from Auburn University in 1986 with a degree in Mathematics and in 1990 with a degree in Civil Engineering. Chuck has been a member of the Entrepreneur Organization (EO) of Birmingham since 2008 and served as its President in 2014. He and his wife Alison have raised two sons, both Eagle Scouts. Chuck was an Assistant Scout Master in Troop 63 and an Eagle Scout coach. In his free time, Chuck enjoys fly fishing for redeye bass.",
   "linkedin": "https://www.linkedin.com/in/chuck-gault-7b020112/",
-  "talks": ["2025"]
+  "talks": [
+    "2025"
+  ]
 }

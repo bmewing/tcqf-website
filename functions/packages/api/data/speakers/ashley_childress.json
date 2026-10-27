@@ -2,8 +2,11 @@
   "id": "ashley_childress",
   "name": "Ashley Childress",
   "role": "Statistician, Zoetis",
-  "avatar": "images/speaker_ashley.jpg",
-  "bio": "Ashley is an industrial statistician with expertise in Statistical Process Control (SPC), Design of Experiments (DOE), and Bayesian optimization models. She focuses on combining mathematical forecasting and predictive modeling to accelerate R&D discovery and eliminate optimization waste.",
-  "linkedin": "",
-  "talks": ["2025", "2021"]
+  "photo": "images/speakers/ashley_childress.jpg",
+  "bio": "Ashley Childress is a statistician at Zoetis, an animal health company. She supports the company's R&D areas, providing support with design of experiments, statistical process control, data analysis and modeling, and statistics training to scientists and engineers. She received her Master’s degree in Statistics from Virginia Tech and Bachelor’s degree in Mathematics from Emory & Henry College. She is a senior member of ASQ and a past chair of the ASQ Chemical and Process Industries Division.",
+  "linkedin": "https://www.linkedin.com/in/ashley-childress-07694064/",
+  "talks": [
+    "2025",
+    "2021"
+  ]
 }

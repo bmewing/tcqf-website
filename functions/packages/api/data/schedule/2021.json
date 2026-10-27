@@ -1,51 +1,75 @@
 [
   {
-    "time": "9:00 AM - 10:00 AM",
-    "track": "Quality Technologies",
-    "title": "Expectations for corrective action responses from audit findings",
-    "speakerId": "",
-    "desc": "Covers what is expected from corrective action responses (for IATF/ISO/AS audit findings), common pitfalls, and risks of poor corrective actions."
-  },
-  {
-    "time": "9:00 AM - 10:00 AM",
+    "time": "9:00 AM - 9:50 AM",
     "track": "Leadership/Improvement",
     "title": "Leadership by Quality – An executive action guide to achieving enduring excellence and social responsibility",
-    "speakerId": "",
-    "desc": "Explores modern interpretations of Juran, Deming, and Ishikawa frameworks in light of increasing digital disruption and social responsibility expectations."
+    "speakerIds": [
+      "greg_watson"
+    ],
+    "desc": "There is much discussion about Quality 4.0 and Social Responsibility these days. How should they influence a quality management system? If you are in a position to advise your organization’s leader what would you tell them needs to be accomplished? In this presentation Dr. Watson will expand upon his series of 18 webinars as delivered to the ASQ Quality Management Division since the pandemic began in February 2020. These monthly webinars probed the fundamental modern interpretation of the concept of “Managing for Quality” based on the combined ideas of Juran, Deming, and Ishikawa and interpreted them in the light of the disrupting turbulence that is arising from the increasing application of digital technologies as they creep in to our daily personal and working lives. In this presentation Dr. Watson will put himself in your place and go through a thinking process and conversation that almost every quality professional will need to have in the coming years. This will give you an opportunity to consider: how will you advise your own management team to cope with the turmoil that is coming to technology and humanity as a result of this transformation?"
   },
   {
-    "time": "9:00 AM - 10:00 AM",
+    "time": "9:00 AM - 9:50 AM",
     "track": "Healthcare",
     "title": "Drug Additions: Current State and Structural Changes that can Help",
-    "speakerId": "",
-    "desc": "Addresses local drug addiction recovery models, treatment barriers, and structural health system changes."
+    "speakerIds": [
+      "timothy_smyth",
+      "jerome_cohan"
+    ],
+    "desc": "This talk will address the current state of drug addiction in this region and some structural changes that have occurred in recent years that have helped with the treatment of drug addiction. It will also address some barriers to effective treatments and structural changes that might help overcome these barriers."
   },
   {
-    "time": "10:00 AM - 11:00 AM",
+    "time": "9:00 AM - 9:50 AM",
     "track": "Quality Technologies",
-    "title": "What is SPC (Statistical Process Control)?",
-    "speakerId": "ashley_childress",
-    "desc": "An introduction to basic Statistical Process Control mechanics and tool charts."
+    "title": "Expectations for corrective action responses from audit findings",
+    "speakerIds": [
+      "joe_kirkpatrick"
+    ],
+    "desc": "Expectations for corrective action responses from IATF/ISO/AS audit findings.\nWhat is expected from corrective actions related to QMS audits?\nCommon pitfalls when responding to audit findings.\nRisks associated with poor corrective action responses."
   },
   {
-    "time": "10:00 AM - 11:00 AM",
+    "time": "10:00 AM - 10:50 AM",
     "track": "Leadership/Improvement",
-    "title": "Leading Remotely: New practices for leading remote teams",
-    "speakerId": "",
-    "desc": "Addresses how to keep remote team members engaged, design hybrid company cultures, and run effective virtual touchpoint meetings."
+    "title": "Remote Leadership: Role Model Practices",
+    "speakerIds": [
+      "deborah_harley_mcclaskey"
+    ],
+    "desc": "The workplace isn’t like it used to be. What do your team members need from you? How do you keep them engaged? How do you create a successful remote workplace culture? How do I keep them interested even during meetings? It was easier when we were face-to-face."
   },
   {
-    "time": "11:00 AM - 12:00 PM",
+    "time": "10:00 AM - 10:50 AM",
+    "track": "Healthcare",
+    "title": "Integration of a Clinical Pharmacist into Clinical Practice and a Quality Improvement Team",
+    "speakerIds": [
+      "whitney_aultman"
+    ],
+    "desc": "Objectives:\n1) Describe the difference in education and training for a clinical pharmacist\n2) Review a method to identify high risk patients for a clinical pharmacist\n3) Discuss the evolution of clinical pharmacist interventions in a process that improves quality measures"
+  },
+  {
+    "time": "10:00 AM - 10:50 AM",
     "track": "Quality Technologies",
-    "title": "SPC for Autocorrelated Data Using Automated Time Series Forecasting",
-    "speakerId": "",
-    "desc": "Advanced analysis of control charting methods adjusted for autocorrelated and serial process observations."
+    "title": "What is Statistical Process Control?",
+    "speakerIds": [
+      "ashley_childress"
+    ],
+    "desc": "Statistical Process Control (SPC) is a powerful methodology that helps users understand and improve their processes. This talk will cover some basic tools of SPC and how they can be applied to both manufacturing and non-manufacturing spaces. Topics will include evaluating process variation, assessing process performance relative to expected behavior and customer requirements, and directing process improvement efforts."
   },
   {
     "time": "11:00 AM - 12:00 PM",
     "track": "Leadership/Improvement",
     "title": "Lean for Service",
-    "speakerId": "",
-    "desc": "An introduction to Lean concepts (eliminating waste and non-value adding efforts) tailored specifically for service-oriented organizations and workflows."
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "Lean is getting rid of all possible non-value adding activities (all waste). Learn the basics of Lean and the best practices of applying Lean to service type of businesses."
+  },
+  {
+    "time": "11:00 AM - 12:00 PM",
+    "track": "Quality Technologies",
+    "title": "SPC for Autocorrelated Data Using Automated Time Series Forecasting",
+    "speakerIds": [
+      "john_noguera"
+    ],
+    "desc": "Review the problem of Statistical Process Control (SPC) for autocorrelated data.\nReview the use of Simple Exponential Smoothing/Exponentially Weighted Moving Average (EWMA) to implement SPC for autocorrelated data.\nBecome familiar with recent developments in time series forecasting that automate advanced model selection and estimation.\nLearn how to easily apply these methods to Statistical Process Control charts for autocorrelated data."
   }
 ]

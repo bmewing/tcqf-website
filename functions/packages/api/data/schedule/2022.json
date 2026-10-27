@@ -3,56 +3,87 @@
     "time": "9:00 AM - 9:50 AM",
     "track": "Track 1",
     "title": "Organizational Improvement Using the Baldrige Framework",
-    "speakerId": "david_jones",
-    "desc": "A walkthrough of easy-to-apply methods for using the Baldrige Excellence Framework to assess operations and drive systemic improvement."
+    "speakerIds": [
+      "david_jones"
+    ],
+    "desc": "The Baldrige Excellence Framework is known globally as the most comprehensive, accessible, and cost-effective performance excellence assessment and improvement process available today. Yet few organizations take advantage of this proven methodology to assess and improve their operations. With supply chain instability, staffing shortages, and economic uncertainty battering organizations, there’s no time like the present to improve operational effectiveness and efficiency. In this session, leaders and quality professionals from any type or size of organization will learn easy to apply methods for using the Baldrige Framework to drive systematic improvement in your operations."
   },
   {
     "time": "9:00 AM - 9:50 AM",
     "track": "Track 2",
-    "title": "Executive Summary of 100 Years of Harvard Business Review: What \"Big Ideas\" Will You Start/Stop Doing?",
-    "speakerId": "",
-    "desc": "A dynamic breakdown of key milestones and frameworks introduced in the HBR over the past century."
+    "title": "Executive Summary of 100 Years of Harvard Business Review: What “Big Ideas” will you start and stop doing?",
+    "speakerIds": [
+      "deborah_harley_mcclaskey"
+    ],
+    "desc": "Topics Include: Feedback, Authenticity, the Sine Qua Non of Leadership, Core Competence, Teaming, Data Driven Success. Challenge your current thinking."
   },
   {
     "time": "10:00 AM - 10:50 AM",
     "track": "Track 1",
     "title": "Using a Leadership System to Create a Culture of Agility and Continuous Improvement",
-    "speakerId": "",
-    "desc": "Learn how to establish an integrated leadership workflow to transition from firefighting to aligned priorities and consistent recognition."
+    "speakerIds": [
+      "john_chessare",
+      "carolyn_candiello"
+    ],
+    "desc": "Attendees will learn how to use an integrated and systematic leadership system that can build resilience and agility. By using a formalized leadership system, organizations can move from firefighting to aligned priorities. It can also help foster a culture of improvement, recognition, and strategic focus."
   },
   {
     "time": "10:00 AM - 10:50 AM",
     "track": "Track 2",
-    "title": "The Golden Triangle of Empathy, Insight, And Hope — Connecting What You Do to What Customers Want",
-    "speakerId": "",
-    "desc": "Explores why viewing products and processes through your customer's eyes is vital for emotional bonding and long-term brand relationships."
+    "title": "The Golden Triangle of Empathy, Insight, And Hope - Connecting What You Do To What Customers Want.",
+    "speakerIds": [
+      "jay_kingley"
+    ],
+    "desc": "Most businesses see the world through their eyes not their customers eyes. This often leads to customers feeling like the business does not understand or \"get them\". As a result, businesses are missing an opportunity to emotionally connect and bond with their customers which is a key ingredient in building relationships. This talk will explore why this relationship is critical and how to build it.",
+    "materials": [
+      {
+        "type": "slides",
+        "label": "Slides (PDF)",
+        "url": "content/2022/2022-jay-kingley-golden-triangle.pdf"
+      }
+    ]
   },
   {
     "time": "11:00 AM - 11:50 AM",
     "track": "Track 1",
     "title": "Stop Hiring Turkeys",
-    "speakerId": "",
-    "desc": "Highlights simple steps that can noticeably improve hiring success and select candidates that fit long-term operations goals."
+    "speakerIds": [
+      "jeff_offutt"
+    ],
+    "desc": "3 out of 4 restaurant team members do not stay at a job 6 months or are poor performers. Get meaningful improvement in your business by simply stop hiring low performers. We will discuss several simple steps that can noticeably improve your hiring success and help you select the right people for your team. Key Topics:\nBest Predictor of Future Job Performance\nGet the Most Useful Information Out of Probing Follow Up Questions\nHalf of candidates will lie to you. How Do You Know Fact from Fiction?\nRecognize Hiring Mistakes Fast\nUse Technology To Speed Up Response Times to Candidates and to Make Some Key Hiring Decisions For You\nHow Non-Hiring Managers Can Help Improve Hiring Success"
   },
   {
     "time": "11:00 AM - 11:50 AM",
     "track": "Track 2",
-    "title": "Agile Lean Six Sigma — Hacking Lean Six Sigma for Results",
-    "speakerId": "",
-    "desc": "How to leverage modern software tools and the Magnificent Seven Quality Tools to train team members and get bottom-line results in a day or two."
+    "title": "Agile Lean Six Sigma – Hacking Lean Six Sigma for Results",
+    "speakerIds": [
+      "jay_arthur"
+    ],
+    "desc": "As you probably know, the economy has changed dramatically since Motorola launched Six Sigma over 30 years ago. The pace of change has also accelerated which means that quality improvement needs to accelerate to keep up. The Magnificent Seven Quality Tools will solve most problems in today’s workplace. Using software and tools, it’s possible to train people and get bottom-line results in a day or two.",
+    "materials": [
+      {
+        "type": "slides",
+        "label": "Slides (PDF)",
+        "url": "content/2022/2022-jay-arthur-agile-lean-six-sigma.pdf"
+      }
+    ]
   },
   {
-    "time": "12:00 PM - 12:50 PM",
+    "time": "12:00 PM - 1:00 PM",
     "track": "Track 1",
     "title": "Shape Your Future using Strategic Planning",
-    "speakerId": "",
-    "desc": "An introduction to a straightforward, proactive strategic planning workflow that leaders can immediately apply to companies and personal development."
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "Most leaders want to be proactive. It is hard to be proactive in leading your organization and personal life without strategic planning. This session will teach a very effective process for strategic planning that is so simple that you can learn and immediately apply to shape your and your company’s future."
   },
   {
-    "time": "12:00 PM - 12:50 PM",
+    "time": "12:00 PM - 1:00 PM",
     "track": "Track 2",
-    "title": "Improving your Organization Using Real Time Customers' Feedback — A case study to create happiness",
-    "speakerId": "",
-    "desc": "Compares CSAT, CES, and NPS metrics. Demonstrates how to use real-time tech integrations to collect feedback and close service loops with employees."
+    "title": "Improving your Organization Using Real Time Customers’ Feedback - A case study to create happiness and increase loyalty",
+    "speakerIds": [
+      "mohammed_alomairy"
+    ],
+    "desc": "Positive customer experience (CX) is crucial to the success of any organization. In this session, we will talk about the three most popular tools (CSAT, CES, NPS) that is used to measure the customer experience and how we use these measures to improve customer experience. We will also talk about how real time customer feedback helps create a customer-centric culture and continuous improvement system in the organization. We will demonstration how we use technology to collect customers feedback to provide management with real-time information and close the loop with all employees in the service chain inside the organization."
   }
 ]

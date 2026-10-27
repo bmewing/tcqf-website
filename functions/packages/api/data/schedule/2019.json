@@ -1,0 +1,102 @@
+[
+  {
+    "time": "8:00 AM - 8:15 AM",
+    "track": "",
+    "title": "Welcome",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "Recognition of Key Regional Organizations"
+  },
+  {
+    "time": "8:15 AM - 8:45 AM",
+    "track": "Keynotes",
+    "title": "Reinforcement of Tri-Cities Talent",
+    "speakerIds": [
+      "mark_cox"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "8:15 AM - 8:45 AM",
+    "track": "Keynotes",
+    "title": "Digital OEE and Continuous Improvement",
+    "speakerIds": [
+      "kendal_brown"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "8:15 AM - 8:45 AM",
+    "track": "Keynotes",
+    "title": "Zero-Incident Mindset Leadership",
+    "speakerIds": [
+      "jeremy_shuppert"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "8:45 AM - 9:15 AM",
+    "track": "Keynotes",
+    "title": "Excellence is in the Details",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "Do you want to know the secret of processes that are excellent? Excellence is in the details. Using Pal’s Sudden Service and other examples, will illustrate this key principle of excellence and will show how this can be incorporated into your processes."
+  },
+  {
+    "time": "9:15 AM - 9:45 AM",
+    "track": "Keynotes",
+    "title": "Journey to Excellence",
+    "speakerIds": [
+      "leslie_blevins"
+    ],
+    "desc": "BTES has been on a journey of continuous improvement for over thirty years—and they’ve learned a lot! Leslie will be sharing BTES’ journey and how using performance excellence has contributed to a high level of performance and outstanding results. Participants will learn ideas on how to implement their values, create a focus for their entire organization, and manage customer inquiries."
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Health Care Track",
+    "title": "Incorporating A Continuous Improvement Culture in a Merged Healthcare Organization",
+    "speakerIds": [
+      "rob_adams",
+      "cody_murdock"
+    ],
+    "desc": "We will be discussing the individual lean/continuous improvement journeys leading up to the corporate journey Ballad Health has been on. We will be emphasizing how our department has come together, how we are defining ourselves, how we define our work and why we do it the way we do. We will highlight our efforts to hardwire a continuous improvement culture beginning with orientation, moving through leader development and instilling the concepts in all new Mangers/Leaders. We will also discuss how we recognize improvement through our Annual Excellence Awards."
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Health Care Initiative Track",
+    "title": "Center for Rural Health Research",
+    "speakerIds": [
+      "randy_wykoff"
+    ],
+    "desc": "Discussion of the development and strategy to create a new school of Public Health that, within a decade, is ranked in the top third of all schools and programs in the country and has broad success metrics;\nPresentation of the health and social challenges facing northeast Tennessee and southwest Virginia;\nExplore the inter-relationship of health, economic development and education and the importance of collaborative efforts to address all three parameters.\nExplore how the Center for Rural Health research will work with regional partners and national experts to execute a performance excellence strategy to impact these health and social conditions by interrupting the inter-generational cycles of poor health, lack of education, and poverty."
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Quality Topics Track",
+    "title": "Exploring the Role of Artificial Intelligence in Quality Systems",
+    "speakerIds": [
+      "mark_ewing"
+    ],
+    "desc": "Artificial Intelligence, or AI, may not be a new topic, but it will be a vital component of quality systems and processes. The marketplace of the future will compete on quality products as we transition from product-based to service-based markets, while technologies like blockchain will make it crystal clear who the ‘weakest link’ is. As technology has enabled us to collect more data than ever before, new tools are needed to enable scalable, data-based decision making in real-time. Come explore what the future looks like and learn about the role AI will play in ensuring quality."
+  },
+  {
+    "time": "11:15 AM - 12:00 PM",
+    "track": "Health Care Track",
+    "title": "Implementing a High Reliability Organization",
+    "speakerIds": [
+      "david_hecht"
+    ],
+    "desc": "Mountain Home VA Health Care System has a long standing history of using performance excellence to systematically improve. MHVAHCS has won: VA’s Cary Award, TNCPE Level 3 Achievement Award\n\nHRO Initiative: MHVAHCS is one of 18 national high reliability organization (HRO) pilots with the objective of transforming the nation’s largest integrated health care system into a high reliability organization (HRO).\n\nHROs put procedures and protocols in place that maximize safety and minimize harm, which in the medical industry assures every patient receives excellent care, every time. Research shows high reliability organizations experience fewer accidents despite being high-risk environments where small errors can produce catastrophic results."
+  },
+  {
+    "time": "11:15 AM - 12:00 PM",
+    "track": "Quality Topics Track",
+    "title": "Implementing Lean in a Service or Health Care Organization",
+    "speakerIds": [
+      "david_jones"
+    ],
+    "desc": "Would you like to create a culture that relentlessly seeks to get rid of all waste? Would you like to do this in a service or health care organization? Lean is one of the most proven processes for doing this. Pal’s Sudden Service is one of the best service-related role models for creating and maintain a culture of lean that relentlessly drives out all forms of non-value adding activities.\n\nIn this session, David will share some of Pal’s Sudden Service’s simple and effective best practices for driving out all forms of waste while not sacrificing effectiveness. You will learn how to apply some of the principles of LEAN to help you take another step toward reaching peak efficiency while maintaining 100% effectiveness."
+  }
+]

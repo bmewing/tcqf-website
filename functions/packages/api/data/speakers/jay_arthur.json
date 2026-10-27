@@ -1,0 +1,11 @@
+{
+  "id": "jay_arthur",
+  "name": "Jay Arthur",
+  "role": "President; Author of QI Macros and Lean Six Sigma Demystified",
+  "photo": "images/speakers/jay_arthur.jpg",
+  "bio": "Jay Arthur, teaches people how to turn data into dollars using Microsoft Excel. Jay helped a healthcare system reduce rejected claims by $24 million. Jay teaches people how to solve operational problems involving delay, defects and deviation in one day using Excel and the Magnificent Seven Tools of Lean Six Sigma. Jay is the author of Lean Six Sigma for Hospitals 2nd (McGraw 2014), Agile Process Innovation and QI Macros Lean Six Sigma Software for Excel—a software package that automates all of the charts and documents required for Agile Process Innovation.",
+  "linkedin": "https://www.linkedin.com/in/jayarthur/",
+  "talks": [
+    "2022"
+  ]
+}

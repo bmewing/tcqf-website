@@ -42,19 +42,32 @@
     <section class="page-head">
         <div class="container">
             <h1>Speakers</h1>
-            <p>2026 speakers will be announced soon. Meet the leaders and experts who have presented at past forums.</p>
+            <p>The practitioners and experts who have presented at the Tri-Cities Quality Forum.</p>
         </div>
     </section>
 
     <!-- Speakers Section -->
     <section class="section">
         <div class="container">
-            <div class="speakers-grid" id="speakers-grid">
-                <!-- Loading State -->
-                <div class="eb-widget-loader" id="speakers-loader">
-                    <div class="spinner"></div>
-                    <p>Loading speakers...</p>
+            <div class="eb-widget-loader" id="speakers-loader">
+                <div class="spinner"></div>
+                <p>Loading speakers...</p>
+            </div>
+
+            <div class="speakers-section" id="featured-section" hidden>
+                <div class="speakers-section-head">
+                    <h2 id="featured-heading">Featured speakers</h2>
+                    <p id="featured-note"></p>
                 </div>
+                <div class="speakers-grid featured" id="featured-grid"></div>
+            </div>
+
+            <div class="speakers-section" id="all-section" hidden>
+                <div class="speakers-section-head">
+                    <h2 id="all-heading">All speakers</h2>
+                    <p>Alphabetical by last name</p>
+                </div>
+                <div class="speakers-grid" id="all-grid"></div>
             </div>
         </div>
     </section>
@@ -107,7 +120,6 @@
     <script src="js/main.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', async () => {
-            const grid = document.getElementById('speakers-grid');
             const loader = document.getElementById('speakers-loader');
 
             // Helper to fetch data with local static file fallback
@@ -126,78 +138,140 @@
                 }
             }
 
+            // All speakers in one API call, or one static file per speaker
+            async function getSpeakers(manifest) {
+                try {
+                    const apiRes = await fetch('/api/data?type=speakers');
+                    if (apiRes.ok) return await apiRes.json();
+                    throw new Error(`API returned status ${apiRes.status}`);
+                } catch (err) {
+                    const results = await Promise.all(manifest.speakers.map(id =>
+                        fetch(`functions/packages/api/data/speakers/${id}.json`)
+                            .then(res => res.ok ? res.json() : null)
+                            .catch(() => null)
+                    ));
+                    return results.filter(s => s !== null);
+                }
+            }
+
+            const SUFFIXES = ['jr', 'jr.', 'sr', 'sr.', 'ii', 'iii', 'iv', 'phd', 'ph.d.'];
+            function sortKey(name) {
+                const parts = name.replace(/,/g, '').split(/\s+/).filter(p => !SUFFIXES.includes(p.toLowerCase()));
+                const last = parts[parts.length - 1] || name;
+                return `${last} ${parts.slice(0, -1).join(' ')}`.toLowerCase();
+            }
+
+            function initials(name) {
+                const parts = name.replace(/[^A-Za-z\s-]/g, '').split(/\s+/).filter(Boolean);
+                return ((parts[0] || '')[0] + (parts.length > 1 ? parts[parts.length - 1][0] : '')).toUpperCase();
+            }
+
+            function speakerIdsOf(session) {
+                if (session.speakerIds) return session.speakerIds;
+                return session.speakerId ? [session.speakerId] : [];
+            }
+
+            function renderCard(speaker, talk) {
+                const card = document.createElement('article');
+                card.className = 'speaker-card';
+                card.id = speaker.id;
+
+                const photoHtml = speaker.photo
+                    ? `<img src="${speaker.photo}" alt="${speaker.name}" loading="lazy">`
+                    : `<span class="speaker-monogram" aria-hidden="true">${initials(speaker.name)}</span>`;
+
+                const yearsHtml = (speaker.talks || []).length > 0
+                    ? `<span class="speaker-years">Spoke in ${speaker.talks.map(year => `<a href="schedule.html?year=${year}&speaker=${speaker.id}">${year}</a>`).join(', ')}</span>`
+                    : '<span></span>';
+
+                const linkedinHtml = speaker.linkedin
+                    ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="${speaker.name} on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>`
+                    : '';
+
+                const talkHtml = talk
+                    ? `<p class="speaker-talk"><a href="schedule.html?year=${talk.year}&speaker=${speaker.id}">${talk.title}</a></p>`
+                    : '';
+
+                const bioHtml = speaker.bio
+                    ? `<details class="speaker-bio"><summary>Read bio</summary>${speaker.bio.split(/\n\s*\n/).map(p => `<p>${p}</p>`).join('')}</details>`
+                    : '';
+
+                card.innerHTML = `
+                    <div class="speaker-photo">${photoHtml}</div>
+                    <h3 class="speaker-name">${speaker.name}</h3>
+                    ${speaker.role ? `<p class="speaker-role">${speaker.role}</p>` : ''}
+                    ${talkHtml}
+                    <div class="speaker-meta">${yearsHtml}${linkedinHtml}</div>
+                    ${bioHtml}
+                `;
+                return card;
+            }
+
             try {
-                // 1. Fetch manifest to get list of speaker ids
                 const manifest = await fetchAPI(
                     '/api/data?type=manifest',
                     'functions/packages/api/data/manifest.json'
                 );
-                
-                // 2. Fetch details for each speaker
-                const speakerPromises = manifest.speakers.map(async (id) => {
-                    try {
-                        return await fetchAPI(
-                            `/api/data?type=speaker&id=${id}`,
-                            `functions/packages/api/data/speakers/${id}.json`
-                        );
-                    } catch (err) {
-                        console.error(`Error loading speaker ${id}:`, err);
-                        return null;
-                    }
-                });
-                
-                const speakers = (await Promise.all(speakerPromises)).filter(s => s !== null);
+                const speakers = await getSpeakers(manifest);
 
-                
-                // Remove loader
+                // Featured: the newest year with a published lineup
+                let featuredYear = null;
+                let featuredSessions = [];
+                for (const year of manifest.years) {
+                    const sessions = await fetchAPI(
+                        `/api/data?type=schedule&year=${year}`,
+                        `functions/packages/api/data/schedule/${year}.json`
+                    );
+                    if (sessions.length > 0) {
+                        featuredYear = year;
+                        featuredSessions = sessions;
+                        break;
+                    }
+                }
+
+                const talkBySpeaker = {};
+                featuredSessions.forEach(session => {
+                    speakerIdsOf(session).forEach(id => {
+                        if (!talkBySpeaker[id]) talkBySpeaker[id] = { year: featuredYear, title: session.title };
+                    });
+                });
+
+                const featured = speakers.filter(s => talkBySpeaker[s.id]);
+                const others = speakers
+                    .filter(s => !talkBySpeaker[s.id])
+                    .sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
+
                 if (loader) loader.style.display = 'none';
-                
-                // 3. Render each speaker
-                speakers.forEach(speaker => {
-                    const card = document.createElement('div');
-                    card.className = 'speaker-card';
-                    card.id = speaker.id;
-                    
-                    // Generate talk links
-                    let talksHtml = '';
-                    if (speaker.talks && speaker.talks.length > 0) {
-                        talksHtml = `
-                            <span class="speaker-talks">Spoke at the ${speaker.talks.map(year => `<a href="schedule.html?year=${year}&speaker=${speaker.id}">${year} forum</a>`).join(', ')}</span>
-                        `;
-                    }
 
-                    // Social Links Markup
-                    let socialIconHtml = '';
-                    if (speaker.linkedin) {
-                        socialIconHtml = `
-                            <a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="${speaker.name} LinkedIn">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                        `;
+                if (featured.length > 0) {
+                    // Keep the featured order the same as the program
+                    const order = featuredSessions.flatMap(speakerIdsOf);
+                    featured.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+                    document.getElementById('featured-heading').textContent = `${featuredYear} speakers`;
+                    if (featuredYear !== manifest.years[0]) {
+                        document.getElementById('featured-note').textContent = `${manifest.years[0]} speakers will be announced soon.`;
                     }
+                    const featuredGrid = document.getElementById('featured-grid');
+                    featured.forEach(s => featuredGrid.appendChild(renderCard(s, talkBySpeaker[s.id])));
+                    document.getElementById('featured-section').hidden = false;
+                }
 
-                    card.innerHTML = `
-                        <div class="speaker-image-container">
-                            <img src="${speaker.avatar || 'images/logo.png'}" alt="${speaker.name}" class="speaker-image" onerror="this.src='images/logo.png'">
-                        </div>
-                        <div class="speaker-info">
-                            <h2 class="speaker-name">${speaker.name}</h2>
-                            <p class="speaker-role">${speaker.role}</p>
-                            <p class="speaker-bio">${speaker.bio}</p>
-                            <div class="speaker-meta">
-                                ${talksHtml}
-                                ${socialIconHtml}
-                            </div>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
+                if (others.length > 0) {
+                    document.getElementById('all-heading').textContent = featured.length > 0 ? 'Past speakers' : 'All speakers';
+                    const allGrid = document.getElementById('all-grid');
+                    others.forEach(s => allGrid.appendChild(renderCard(s, null)));
+                    document.getElementById('all-section').hidden = false;
+                }
+
+                // Bring a linked speaker into view
+                if (window.location.hash) {
+                    const target = document.getElementById(window.location.hash.slice(1));
+                    if (target) target.scrollIntoView({ block: 'start' });
+                }
             } catch (e) {
                 console.error('Error rendering speakers list:', e);
                 if (loader) {
-                    loader.innerHTML = '<p class="load-error"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load speakers. Please refresh or check console errors.</p>';
-                    const spinner = loader.querySelector('.spinner');
-                    if (spinner) spinner.style.display = 'none';
+                    loader.innerHTML = '<p class="load-error"><i class="fa-solid fa-triangle-exclamation"></i> Speakers could not be loaded. Refresh the page to try again.</p>';
                 }
             }
         });

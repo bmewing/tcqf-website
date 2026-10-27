@@ -1,0 +1,126 @@
+[
+  {
+    "time": "8:00 AM - 8:15 AM",
+    "track": "",
+    "title": "Welcome",
+    "speakerIds": [
+      "david_jones"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "8:15 AM - 9:00 AM",
+    "track": "Keynotes",
+    "title": "Journey to Excellence",
+    "speakerIds": [
+      "lola_mcvey"
+    ],
+    "desc": "",
+    "materials": [
+      {
+        "type": "video",
+        "label": "Watch the recording",
+        "url": "https://youtu.be/rBoxi4j2N34"
+      },
+      {
+        "type": "slides",
+        "label": "Slides (PDF)",
+        "url": "content/2018/2018-lola-mcvey-btes-powering-on.pdf"
+      }
+    ]
+  },
+  {
+    "time": "9:00 AM - 9:45 AM",
+    "track": "Keynotes",
+    "title": "Striving for Excellence: Widgets, Hedgehogs, and Health in Municipal Management",
+    "speakerIds": [
+      "patrick_lawton"
+    ],
+    "desc": "",
+    "materials": [
+      {
+        "type": "video",
+        "label": "Watch the recording",
+        "url": "https://youtu.be/9v5ovEzhAhM"
+      }
+    ]
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Health Care Track",
+    "title": "Integrating Operational Excellence at Ballad Health",
+    "speakerIds": [
+      "andrew_wampler"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Tools Track",
+    "title": "Leadership… As a Process",
+    "speakerIds": [
+      "tamera_parsons"
+    ],
+    "desc": "",
+    "materials": [
+      {
+        "type": "slides",
+        "label": "Slides (PDF)",
+        "url": "content/2018/2018-tamera-fields-parsons-emphasis-on-process-for-leadership.pdf"
+      }
+    ]
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Management Track",
+    "title": "From Strategy to Results",
+    "speakerIds": [
+      "patrick_lawton"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "10:15 AM - 11:00 AM",
+    "track": "Hands-On Lean Workshop",
+    "title": "Using Lean: Getting Rid of Waste (two-part workshop)",
+    "speakerIds": [
+      "rob_adams",
+      "cody_murdock"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "11:15 AM - 12:00 PM",
+    "track": "Health Care Track",
+    "title": "Project EARTH",
+    "speakerIds": [
+      "randy_wykoff"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "11:15 AM - 12:00 PM",
+    "track": "Tools Track",
+    "title": "Reasonable Goal Setting Based On Data",
+    "speakerIds": [
+      "arved_harding"
+    ],
+    "desc": "This workshop will address the concept of setting reasonable goals by going back to the basics of what the data we have truly represents. The concepts of point estimates and interval estimates will be addressed by generating live data with a teaching instrument called a quincunx. This workshop is aimed at the medical and services industries but can be helpful in any area."
+  },
+  {
+    "time": "11:15 AM - 12:00 PM",
+    "track": "Management Track",
+    "title": "How to Use Storytelling to Enhance Your Brand",
+    "speakerIds": [
+      "drew_bedard"
+    ],
+    "desc": "",
+    "materials": [
+      {
+        "type": "slides",
+        "label": "Slides (PDF)",
+        "url": "content/2018/2018-drew-bedard-storytelling.pdf"
+      }
+    ]
+  }
+]

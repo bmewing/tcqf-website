@@ -2,8 +2,14 @@
   "id": "david_jones",
   "name": "David M. Jones",
   "role": "President, The Excellence Advisory",
-  "avatar": "images/speaker_david.jpg",
-  "bio": "David is an acclaimed consultant and coach specialized in organizational performance frameworks, leadership systems, and the Baldrige Excellence Framework. In 2024, his 17-mile trek through the aftermath of Hurricane Helene to walk his daughter down the aisle captured hearts worldwide, symbolizing the relentless determination he brings to executive coaching.",
-  "linkedin": "",
-  "talks": ["2025", "2023", "2022"]
+  "photo": "images/speakers/david_jones.jpg",
+  "bio": "David M. Jones is an engineer-turned-educator, performance excellence champion, and the founder of The Excellence Advisory. With over 40 years of experience working inside and alongside world-class organizations—including Pal’s Sudden Service, Bristol Tennessee Essential Services, Caterpillar Financial, and The Savannah Bananas—David has helped businesses, leaders, and teams achieve what he calls PeakOps—peak operating performance. David holds degrees in Biomedical and Industrial Engineering, is a recipient of the 2020 McWherter Leadership Award from the Tennessee Center for Performance Excellence, and is an ASQ Certified Manager of Quality/Organizational Excellence. He lives what he teaches—and on one unforgettable night, he quite literally walked the talk.",
+  "linkedin": "https://www.linkedin.com/in/davidmjones/",
+  "talks": [
+    "2025",
+    "2023",
+    "2022",
+    "2019",
+    "2018"
+  ]
 }

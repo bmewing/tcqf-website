@@ -1,0 +1,11 @@
+{
+  "id": "mark_ewing",
+  "name": "Mark Ewing",
+  "role": "AI & Machine Learning Technology Manager, Eastman Chemical Company",
+  "photo": "images/speakers/mark_ewing.jpg",
+  "bio": "Mark Ewing is an Alaskan native, transplanted to Tennessee almost 10 years ago when he joined Eastman Chemical as a statistician. In 2013 he launched Eastman’s AI program and continues to manage the program as well as serve as the Chief Architect for AI and Machine Learning technologies. He is a contributor to open-source programming languages and enjoys backpacking with his wife, Amy. Mark received his M.S. in Applied Statistics from Bowling Green State University and was a 2015 recipient of the Tri-Cities ‘Forty Under 40’ award.",
+  "linkedin": "https://www.linkedin.com/in/bmarkewing/",
+  "talks": [
+    "2019"
+  ]
+}

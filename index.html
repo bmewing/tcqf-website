@@ -257,26 +257,23 @@
                 link.href = `schedule.html?year=${year}`;
 
                 const rows = await Promise.all(sessions.slice(0, 4).map(async (session) => {
-                    let speaker = null;
-                    if (session.speakerId) {
-                        try {
-                            speaker = await fetchAPI(
-                                `/api/data?type=speaker&id=${session.speakerId}`,
-                                `functions/packages/api/data/speakers/${session.speakerId}.json`
-                            );
-                        } catch (e) {
-                            speaker = null;
-                        }
-                    }
+                    const speakerIds = session.speakerIds || (session.speakerId ? [session.speakerId] : []);
+                    const speakers = (await Promise.all(speakerIds.map(id =>
+                        fetchAPI(
+                            `/api/data?type=speaker&id=${id}`,
+                            `functions/packages/api/data/speakers/${id}.json`
+                        ).catch(() => null)
+                    ))).filter(Boolean);
+                    const photo = speakers.map(s => s.photo).find(Boolean);
                     const li = document.createElement('li');
                     li.className = 'program-row';
                     li.innerHTML = `
                         <span class="program-time">${session.time}</span>
                         <div>
                             <h3 class="program-title">${session.title}</h3>
-                            ${speaker ? `<p class="program-speaker">${speaker.name}, ${speaker.role}</p>` : ''}
+                            ${speakers.length ? `<p class="program-speaker">${speakers.map(s => s.role ? `${s.name}, ${s.role}` : s.name).join('; ')}</p>` : ''}
                         </div>
-                        ${speaker && speaker.avatar ? `<img src="${speaker.avatar}" alt="" class="program-photo">` : '<span></span>'}
+                        ${photo ? `<img src="${photo}" alt="" class="program-photo">` : '<span></span>'}
                     `;
                     return li;
                 }));

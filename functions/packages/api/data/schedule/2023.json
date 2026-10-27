@@ -1,37 +1,48 @@
 [
   {
     "time": "1:00 PM - 1:45 PM",
-    "track": "Single Track",
+    "track": "",
     "title": "Building Trust, Communication, and Respect at Work: Enhance Your Multi-Generational Culture",
-    "speakerId": "",
-    "desc": "Provides tools on how to build high-performing multi-generational teams (from Silent Generation to Gen Alpha) to innovation, employee engagement, and business success."
+    "speakerIds": [
+      "zac_jarrard",
+      "douglas_wood"
+    ],
+    "desc": "Quality managers often work with a diverse range of stakeholders and multi-generational teams. Each living generation in the United States, from the Silent Generation to Generation Alpha, all have a unique set of strengths, weaknesses, and opportunities. They can be brought together to help organizations deliver projects, innovate, engage associates, and achieve success. This presentation will provide an overview of each living generation in the United States from the Silent Generation to Generation Alpha, examine tools for how to build high performing multi-generational teams, and reflect on future trends affecting the global marketplace."
   },
   {
     "time": "1:45 PM - 2:30 PM",
-    "track": "Single Track",
+    "track": "",
     "title": "Effective Internal Quality Auditing",
-    "speakerId": "",
-    "desc": "Centers on skill assessment, Lead Auditor capabilities, and strategies to successfully leverage internal auditing logs to drive business improvement."
+    "speakerIds": [
+      "don_brecken"
+    ],
+    "desc": "This presentation centers on the enhancement of quality auditing effectiveness with a focus on internal quality audits. The presentation delves into key aspects, including skill assessment, competence prerequisites for auditors, lead auditor proficiencies, and the evaluation of quality auditing effectiveness. Its overarching objective is to impart a good understanding of quality audit principles, the drivers of audit effectiveness, and strategies for effectively leveraging the quality audit program to help improve the business.\n\nThe speaker, an accomplished quality professional, shares strategies, tactics, and tips acquired through years of experience. The presentation wraps up by inviting questions and provides contact information for anyone seeking additional insights into quality auditing. The presentation provides the audience with access to the presenter's insanity and concludes with a cautionary message for all who try to dodge their responsibilities to their quality management system."
   },
   {
     "time": "2:30 PM - 3:15 PM",
-    "track": "Single Track",
-    "title": "Five Simple Tools You Can Immediately Apply to Remove Waste and Non-Value Adding Activities",
-    "speakerId": "",
-    "desc": "Teaches five highly effective tools to reduce waste: Spaghetti Mapping, Point of Use Storage (POUS), Checklists, Self-Inspections, and Error Proofing (Poka-Yoke)."
+    "track": "",
+    "title": "Five Simple Tools You Can Immediately Apply to Remove Waste and Non-Value adding Activities",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "This presentation will give a skill you can immediately apply. As a result of this presentation, you will be able to apply within your organization 5 simple, effective tools to quickly remove waste and non-value adding activities. These tools are:\nSpaghetti Map; Point of Use Storage (POUS); Checklists; Self-Inspection; Error Proofing.\nThese tools are so simple, you can learn to apply each of them during the presentation. These tools can be applied to many situations both on-the-job and within your home. These tools are so effective that using them will reduce waste and non-value adding activities."
   },
   {
     "time": "3:15 PM - 4:00 PM",
-    "track": "Single Track",
+    "track": "",
     "title": "Bust These Myths to Achieve Breakthrough Performance",
-    "speakerId": "david_jones",
-    "desc": "Teaches how to bust long-held performance and quality myths that prevent individuals and organizations from reaching their true potential."
+    "speakerIds": [
+      "david_jones"
+    ],
+    "desc": "There are myths and long-held misbeliefs that keep individuals and organizations from reaching their full potential. In this quick-hitting session you will learn how to bust three of these in a way that opens the doors to new performance levels and improved results."
   },
   {
     "time": "4:00 PM - 4:45 PM",
-    "track": "Single Track",
+    "track": "",
     "title": "Applying Predictive Modeling and Computer Vision (CV) Tools Useful in Biomedicine and Public Health",
-    "speakerId": "",
-    "desc": "Examples of applying imaging analytics tools to build predictive models. Covers pelvic injury diagnosis parameters and external-beam radiation target accuracy."
+    "speakerIds": [
+      "melvin_alexander"
+    ],
+    "desc": "I will present two examples applying imaging analytics tools to build statistical, predictive models. One example helps diagnose and treat patients with traumatic, penetrating abdominal and pelvic injuries (PAPIs). The other example finds target sites to kill prostate cancer tumors.\n\nThe first example describes ways of converting medical image data to spot key signs of PAPIs that help radiologists and clinicians diagnose and decide which patients needed surgery, non-operative management, or observation after trauma-center admission.\n\nThe other example used computer vision to output MRI images with fiducial markers that show where to aim external-beam radiation doses to kill tumors, sparing healthy cells. Next, I compute estimates of fiducial marker intensities which establishes tolerance intervals for fiducial marker identification with high degrees of confidence useful in future applications."
   }
 ]

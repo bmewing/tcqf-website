@@ -1,0 +1,80 @@
+[
+  {
+    "time": "8:00 AM - 8:15 AM",
+    "track": "",
+    "title": "Welcome",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "8:15 AM - 9:00 AM",
+    "track": "Keynotes",
+    "title": "Patient-Focused Excellence: Connecting critical business systems",
+    "speakerIds": [
+      "david_hall"
+    ],
+    "desc": "Learn how the University of Tennessee Medical Center links its Leadership Model to the Strategic Plan to Performance Improvement and Innovation."
+  },
+  {
+    "time": "9:30 AM - 10:30 AM",
+    "track": "Management Track",
+    "title": "The Three Rs of Workforce Engagement",
+    "speakerIds": [
+      "rebecca_hunter",
+      "trish_holliday"
+    ],
+    "desc": "There is good news, and there is bad news. Research indicates that acquiring the high-performing talent necessary to achieve organizational goals will become increasingly more difficult. In addition, statistics show that employee engagement remains at roughly 30%, so keeping such talent is a serious challenge.\n\nThat’s the bad news.\n\nThe good news is that there is a formula for creating a high-performing workforce – Recruit + Retain + Reward. By finding the right talent for the right roles, establishing strategies to keep that talent, and fostering an engaging culture through a reward strategy, organizational leaders can successfully attract and keep a workforce that is highly engaged.\n\nIn this presentation, employee engagement will be defined and practical steps given to help organizational leaders design strategies for recruiting and retaining high-performing talent."
+  },
+  {
+    "time": "9:30 AM - 10:30 AM",
+    "track": "Tools Track",
+    "title": "Five Signs that Indicate Operational Excellence",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "Operational Excellence is often overlooked way to create a significant sustainable competitive advantage. How can you tell if you have it? This presentation will describe five observable ways to tell if Operational Excellence is present in your or other organizations. The signs are so user friendly that you will be able to use them immediately after the presentation."
+  },
+  {
+    "time": "9:30 AM - 10:30 AM",
+    "track": "Lean Workshop",
+    "title": "Using Lean: Getting Rid of Non-Value Adding Activities and Waste",
+    "speakerIds": [
+      "barry_schnabel",
+      "sharon_collins",
+      "randy_ball",
+      "renee_niziurski_mann",
+      "tim_trent"
+    ],
+    "desc": "Hands On Workshop: Got Waste? Like to get rid of it? Lean is one of the easiest and most versatile ways of doing this. It is about identifying and removing non-value adding activities. Numerous organizations that have implemented LEAN have realized benefits in speed and quality while reducing wasteful activities, wasted time, and complexity. This track will expose the participant to a core LEAN principle and technique in a highly interactive, hands-on, and fun simulation. Everyone can apply it, both on and off the job. Leaders, managers, and process improvers alike will benefit from this experience regardless of the type of business you work in or the job you have."
+  },
+  {
+    "time": "10:45 AM - 11:45 AM",
+    "track": "Management Track",
+    "title": "Am I Measuring the Right Things",
+    "speakerIds": [
+      "tamera_parsons"
+    ],
+    "desc": "We all live and work in a world that is overflowing with data and information, and it’s easier than ever now to measure EVERYTHING! It’s also easy to get so overwhelmed with all the available information that we aren’t sure we are measuring what really matters. This session will share some methods to simplify your thinking and help you ensure that you are measuring the most important things."
+  },
+  {
+    "time": "10:45 AM - 11:45 AM",
+    "track": "Tools Track",
+    "title": "Toyota Kata – Daily Practice with Coaching to Build a Continuous Improvement Driven Culture",
+    "speakerIds": [
+      "dwaine_raper"
+    ],
+    "desc": "In this session you will participate in a fun activity that highlights and demonstrates the principles of the Toyota Kata method for building a CI driven culture.\n\nToyota Kata is a system of management daily practices that result in a sustaining culture that is focused on daily improvement. There are two key elements of Toyota Kata; the Improvement Kata, and the Coaching Kata. The Improvement Kata is the daily routine of practicing the rapid plan-do-check-act cycles to continuously improve a process from its current state toward a target condition. The Coaching Kata is the daily routine for teaching the Improvement Kata thinking pattern, and reinforces it, to sustain the continuous improvement."
+  },
+  {
+    "time": "10:45 AM - 11:45 AM",
+    "track": "Health Care Track",
+    "title": "The Sullivan Health Way – Our Journey to Excellence",
+    "speakerIds": [
+      "andrew_may",
+      "rachel_dean"
+    ],
+    "desc": "This session will discuss the process improvements put into practice at the Sullivan County Regional Health Department, including improvements in employee engagement, patient satisfaction, and organizational learning."
+  }
+]

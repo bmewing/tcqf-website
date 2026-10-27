@@ -1,30 +1,38 @@
 [
   {
     "time": "1:00 PM - 1:50 PM",
-    "track": "Keynote Focus",
+    "track": "",
     "title": "Achieving Excellence by Focusing on Key Customer Requirements",
-    "speakerId": "chuck_gault",
-    "desc": "Our customers have some of manufacturing’s highest quality standards. Their stated expectations are zero defects. Getting our 60 team members to focus on our key customer requirements has made a clear, measurable difference in our ability to meet our customers’ expectations and achieve excellence every day."
+    "speakerIds": [
+      "chuck_gault"
+    ],
+    "desc": "Max Coating is a metal finishing company in Birmingham, AL. We specialize in applying ecoat, a rust-proof coating, to metal components primarily for the automotive industry. Our customers are the Tier 1 and Tier 2 supplies to BMW, Mercedes, Honda, Toyota, VW and other OEMs. On a typical day we will ecoat over 80,000 individual components on their way to the new car assembly lines as part of the south’s automotive supply chain.\n\nOur customers have some of manufacturing’s highest quality standards. Their stated expectations are zero defects. Getting our 60 team members to focus on our key customer requirements has made a clear, measurable difference in our ability to meet our customers’ expectations and achieve excellence every day."
   },
   {
     "time": "2:00 PM - 2:50 PM",
-    "track": "Quality 4.0",
+    "track": "",
     "title": "The Next Evolution of Quality: Practical AI Tools That Improve Operations",
-    "speakerId": "levi_mcpherson",
-    "desc": "Artificial Intelligence is transforming how organizations design, document, and improve their processes. In this session, Levi McPherson demonstrates how quality and operations professionals can use practical, no-code AI tools to enhance existing systems of excellence—without abandoning proven frameworks like ISO 9001, Baldrige, Lean, or Six Sigma."
+    "speakerIds": [
+      "levi_mcpherson"
+    ],
+    "desc": "Artificial Intelligence is transforming how organizations design, document, and improve their processes.\nIn this session, Levi McPherson demonstrates how quality and operations professionals can use practical, no-code AI tools to enhance existing systems of excellence—without abandoning proven frameworks like ISO 9001, Baldrige, Lean, or Six Sigma.\n\nYou’ll see live examples of how AI can:\n\nCapture tribal knowledge and turn it into clear, standardized work.\n\nGenerate SOPs, checklists, and process maps in minutes.\n\nDetect variation and waste before they show up in KPIs.\n\nEmbed continuous improvement directly into daily operations.\n\nNo coding, no large budgets—just real-world tools you can apply immediately to improve performance and consistency.\n\nWhat You’ll Learn\n\n✅ Identify where AI can add measurable value to your quality and operations systems.\n✅ Use AI prompts to define and refine any process.\n✅ Safely integrate AI within ISO, Baldrige, Lean, and Six Sigma frameworks.\n✅ Build a roadmap to pilot, validate, and scale AI-enabled process improvements.\n\nWho Should Attend\n\nQuality & Operations Managers\n\nContinuous Improvement Leaders\n\nHealthcare and Manufacturing Professionals\n\nProcess Consultants and Auditors\n\nAnyone seeking faster, smarter ways to reduce variation and drive excellence"
   },
   {
     "time": "3:00 PM - 3:50 PM",
-    "track": "Leadership Excellence",
+    "track": "",
     "title": "How a Hurricane, a Wedding, and the Trek of a Lifetime Apply to Your Organization's Success",
-    "speakerId": "david_jones",
-    "desc": "David isn’t just known for his business acumen. In 2024, he became a symbol of relentless determination when he trekked through the devastation left by Hurricane Helene to walk his daughter Elizabeth down the aisle. With no cell service or internet, what should have been a two-hour drive turned into a treacherous, 17-mile overnight trek on foot—one that captivated hearts around the world. Learn how these lessons in alignment and determination map directly to organizational success."
+    "speakerIds": [
+      "david_jones"
+    ],
+    "desc": "David isn’t just known for his business acumen. In 2024, he became a symbol of relentless determination when he trekked through the devastation left by Hurricane Helene to walk his daughter Elizabeth down the aisle. With no cell service or internet, what should have been a two-hour drive turned into a treacherous, 17-mile overnight trek on foot—one that captivated hearts around the world.\n\nDavid shares this gripping, real-life story to explore how adversity in life and business is inevitable, but success is intentional. He brings to life how timeless performance excellence principles—focus, agility, and resourcefulness—can help us push forward when the path is unclear. With heart, humor, and hard-earned wisdom, David shows us how to weather life’s storms and chart a course to success, no matter the obstacles."
   },
   {
     "time": "4:00 PM - 4:50 PM",
-    "track": "Advanced Quality Science",
+    "track": "",
     "title": "Guided Discovery: Combining Bayesian Optimization with DOE for Material Discovery and Continuous Improvement",
-    "speakerId": "ashley_childress",
-    "desc": "Bayesian Optimization is an approach that helps speed up the discovery of new materials by guiding experiments toward the most promising areas in an efficient and strategic way. The method balances experimentation in unexplored spaces as well as high-performing regions to accelerate discovery and minimize cycle iterations."
+    "speakerIds": [
+      "ashley_childress"
+    ],
+    "desc": "Bayesian Optimization is an approach that helps speed up the discovery of new materials by guiding experiments toward the most promising areas in an efficient and strategic way. The method balances experimentation in unexplored spaces as well as high-performing regions to accelerate discovery. In this talk, we will provide an accessible overview of how Bayesian Optimization works and how it can be combined with traditional Design of Experiments (DOE) methods. We will also discuss software options available for implementing this approach. Key statistical ideas that support well-designed and informative experiments throughout the discovery process will be highlighted. By combining these approaches, we can enhance materials discovery and continuous improvement and gain deeper insights into material behavior, helping to drive faster innovation in materials science."
   }
 ]

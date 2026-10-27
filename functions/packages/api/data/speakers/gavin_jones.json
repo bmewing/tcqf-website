@@ -1,0 +1,11 @@
+{
+  "id": "gavin_jones",
+  "name": "Gavin Jones",
+  "role": "Principal Application Engineer, SmartUQ",
+  "photo": "images/speakers/gavin_jones.jpg",
+  "bio": "Gavin Jones serves as a Principal Application Engineer at SmartUQ, where he is responsible for performing simulation and AI work for clients in the automotive, aerospace, defense, semiconductor, and other industries. He is a member of the SAE Chassis Committee as well as the AIAA Digital Engineering Integration Committee. Gavin is also a key contributor in SmartUQ’s Digital Twin/Digital Thread initiative.",
+  "linkedin": "https://www.linkedin.com/in/gavin-jones-9a621815a/",
+  "talks": [
+    "2024"
+  ]
+}

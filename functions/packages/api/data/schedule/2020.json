@@ -1,0 +1,38 @@
+[
+  {
+    "time": "9:00 AM - 9:10 AM",
+    "track": "",
+    "title": "Welcome",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "9:10 AM - 10:00 AM",
+    "track": "Keynotes",
+    "title": "The NHC South Central Region Framework for Customer Service Excellence",
+    "speakerIds": [
+      "doran_johnson"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "10:10 AM - 11:00 AM",
+    "track": "Keynotes",
+    "title": "Strength Finder: Developing Teams and Companies",
+    "speakerIds": [
+      "deborah_harley_mcclaskey"
+    ],
+    "desc": ""
+  },
+  {
+    "time": "11:10 AM - 12:00 PM",
+    "track": "Keynotes",
+    "title": "Sustaining the Gain: Role Model Practices for Keeping the Improvements",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": ""
+  }
+]

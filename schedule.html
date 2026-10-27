@@ -42,7 +42,7 @@
     <section class="page-head">
         <div class="container">
             <h1>Schedule</h1>
-            <p>The program for this year's forum, plus every lineup back to 2021.</p>
+            <p>The program for this year's forum, plus every lineup back to 2017.</p>
         </div>
     </section>
 
@@ -151,6 +151,9 @@
             let activeYear = urlParams.get('year');
             const targetSpeaker = urlParams.get('speaker');
 
+            // The upcoming forum; every other year is shown as an archive
+            let currentYear = null;
+
             // Cache to prevent duplicate speaker queries
             const speakerCache = {};
 
@@ -183,23 +186,35 @@
                 }
                 timelineContainer.innerHTML = '';
                 
-                // Formatted titles for headers
-                let displayTitle = `${year} Session Lineup`;
-                if (year === '2026') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 12, 2026 (1:00 PM - 5:00 PM ET)`;
-                } else if (year === '2025') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 13, 2025 (Archive)`;
-                } else if (year === '2024') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 14, 2024 (Archive)`;
-                } else if (year === '2023') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 9, 2023 (Archive)`;
-                } else if (year === '2022') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 10, 2022 (Archive)`;
-                } else if (year === '2021') {
-                    displayTitle = `<i class="fa-regular fa-calendar-check"></i> November 11, 2021 (Archive)`;
+                // Forum dates; only the upcoming forum shows its hours
+                const forumDates = {
+                    '2026': 'November 12, 2026',
+                    '2025': 'November 13, 2025',
+                    '2024': 'November 14, 2024',
+                    '2023': 'November 9, 2023',
+                    '2022': 'November 10, 2022',
+                    '2021': 'November 11, 2021',
+                    '2020': 'November 12, 2020',
+                    '2019': 'November 14, 2019',
+                    '2018': 'November 8, 2018',
+                    '2017': 'November 7, 2017'
+                };
+                // In-person venues before the forum moved online in 2020
+                const forumVenues = {
+                    '2019': 'Eastman Toy F. Reid Employee Center, Kingsport, TN',
+                    '2018': 'Eastman Toy F. Reid Employee Center, Kingsport, TN',
+                    '2017': 'Eastman Toy F. Reid Employee Center, Kingsport, TN'
+                };
+                const isArchive = year !== currentYear;
+                const dateText = forumDates[year] || `${year} Session Lineup`;
+                const formatText = Number(year) >= 2020
+                    ? 'Virtual'
+                    : (forumVenues[year] ? `In person, ${forumVenues[year]}` : 'In person');
+                if (yearHeader) {
+                    yearHeader.innerHTML = `<i class="fa-regular fa-calendar-check"></i> ${dateText}${isArchive ? '' : ', 1:00 PM - 5:00 PM ET'}
+                        <span class="forum-format">${formatText}</span>`;
                 }
-                if (yearHeader) yearHeader.innerHTML = displayTitle;
-                
+
                 try {
                     const sessions = await fetchAPI(
                         `/api/data?type=schedule&year=${year}`,
@@ -215,56 +230,86 @@
                         return;
                     }
 
+                    // Past forums are grouped by track (when there were several) instead of by time
+                    const groups = [...new Set(sessions.map(s => s.track || ''))];
+                    const groupByTrack = isArchive && groups.filter(Boolean).length > 1;
+                    const ordered = groupByTrack
+                        ? groups.flatMap(g => sessions.filter(s => (s.track || '') === g))
+                        : sessions;
+
                     // Build timeline items
-                    const sessionPromises = sessions.map(async (session, index) => {
+                    const sessionPromises = ordered.map(async (session, index) => {
                         const item = document.createElement('div');
                         item.className = 'timeline-item';
-                        
-                        // Fetch speaker details if speakerId exists
-                        const speaker = await getSpeaker(session.speakerId);
-                        
-                        let speakerHtml = '';
-                        if (speaker) {
-                            speakerHtml = `
-                                <a href="speakers.html#${speaker.id}" class="timeline-speaker-link">
-                                    <img src="${speaker.avatar || 'images/logo.png'}" alt="${speaker.name}" class="timeline-speaker-avatar" onerror="this.src='images/logo.png'">
-                                    <span>${speaker.name}, ${speaker.role}</span>
-                                </a>
-                            `;
-                        }
+
+                        // Fetch details for every speaker in the session
+                        const speakerIds = session.speakerIds || (session.speakerId ? [session.speakerId] : []);
+                        const speakers = (await Promise.all(speakerIds.map(getSpeaker))).filter(Boolean);
+
+                        const speakerHtml = speakers.map(speaker => `
+                            <a href="speakers.html#${speaker.id}" class="timeline-speaker-link">
+                                ${speaker.photo ? `<img src="${speaker.photo}" alt="" class="timeline-speaker-avatar">` : ''}
+                                <span>${speaker.name}${speaker.role ? `, ${speaker.role}` : ''}</span>
+                            </a>
+                        `).join('');
 
                         // Check highlight condition
-                        const isHighlighted = targetSpeaker && session.speakerId === targetSpeaker;
-                        const cardClass = isHighlighted ? 'timeline-card highlighted-session' : 'timeline-card';
-                        const cardId = isHighlighted ? 'highlighted-session-card' : `session-${index}`;
+                        const isHighlighted = targetSpeaker && speakerIds.includes(targetSpeaker);
+                        const cardClass = ['timeline-card', isArchive ? 'no-time' : '', isHighlighted ? 'highlighted-session' : ''].filter(Boolean).join(' ');
+                        const cardId = `session-${index}`;
+
+                        let headerHtml = '';
+                        if (!isArchive) {
+                            headerHtml = `
+                                <div class="timeline-header">
+                                    <span class="timeline-time-badge"><i class="fa-regular fa-clock"></i> ${session.time}</span>
+                                    ${session.track ? `<span class="timeline-track-badge">${session.track}</span>` : ''}
+                                </div>`;
+                        } else if (!groupByTrack && session.track) {
+                            headerHtml = `<div class="timeline-header"><span class="timeline-track-badge">${session.track}</span></div>`;
+                        }
+
+                        const materialsHtml = (session.materials || []).length
+                            ? `<div class="timeline-materials">${session.materials.map(m => `
+                                <a href="${m.url}" target="_blank" rel="noopener noreferrer" class="material-link">
+                                    <i class="${m.type === 'video' ? 'fa-brands fa-youtube' : 'fa-regular fa-file-pdf'}"></i>
+                                    ${m.label || (m.type === 'video' ? 'Watch the recording' : 'Slides (PDF)')}
+                                </a>`).join('')}</div>`
+                            : '';
 
                         item.innerHTML = `
                             <div class="timeline-dot"></div>
                             <div class="${cardClass}" id="${cardId}">
-                                <div class="timeline-header">
-                                    <span class="timeline-time-badge"><i class="fa-regular fa-clock"></i> ${session.time}</span>
-                                    ${session.track ? `<span class="timeline-track-badge">${session.track}</span>` : ''}
-                                </div>
+                                ${headerHtml}
                                 <h3 class="timeline-title">${session.title}</h3>
                                 ${speakerHtml}
-                                <p class="timeline-desc">${session.desc}</p>
+                                ${session.desc ? `<p class="timeline-desc">${session.desc}</p>` : ''}
+                                ${materialsHtml}
                             </div>
                         `;
-                        return { element: item, highlighted: isHighlighted };
+                        return { element: item, track: session.track };
                     });
 
                     const renderedItems = await Promise.all(sessionPromises);
-                    
+
                     if (loader) loader.style.display = 'none';
 
+                    let lastTrack = null;
                     renderedItems.forEach(itemObj => {
+                        if (groupByTrack && itemObj.track && itemObj.track !== lastTrack) {
+                            const heading = document.createElement('h3');
+                            heading.className = 'timeline-track-heading';
+                            heading.textContent = itemObj.track;
+                            timelineContainer.appendChild(heading);
+                        }
+                        lastTrack = itemObj.track;
                         timelineContainer.appendChild(itemObj.element);
                     });
 
                     // Smooth scroll to highlighted card if it exists
                     if (targetSpeaker) {
                         setTimeout(() => {
-                            const highlightedCard = document.getElementById('highlighted-session-card');
+                            const highlightedCard = document.querySelector('.highlighted-session');
                             if (highlightedCard) {
                                 highlightedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                             }
@@ -292,6 +337,7 @@
                 if (!activeYear || !manifest.years.includes(activeYear)) {
                     activeYear = manifest.years[0];
                 }
+                currentYear = manifest.years[0];
 
                 // Build Tabs Dynamically
                 tabsContainer.innerHTML = '';
@@ -300,7 +346,7 @@
                     btn.className = `tab-btn ${year === activeYear ? 'active' : ''}`;
                     btn.setAttribute('data-year', year);
                     btn.id = `tab-${year}`;
-                    btn.innerText = year === manifest.years[0] ? `${year} Event` : `${year} Archive`;
+                    btn.innerText = year === manifest.years[0] ? `${year} Event` : year;
                     
                     btn.addEventListener('click', () => {
                         // Update active tab styling

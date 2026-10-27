@@ -1,9 +1,11 @@
 {
   "id": "levi_mcpherson",
   "name": "Levi McPherson",
-  "role": "Founder and CEO, McPherson Analytics",
-  "avatar": "images/speaker_levi.jpg",
-  "bio": "Levi is a digital transformation expert specializing in no-code AI tools, operations analysis, and data engineering. He works with organizations to integrate advanced AI-driven dashboards and workflows into existing quality structures like Lean, Six Sigma, and ISO 9001 frameworks.",
-  "linkedin": "https://linkedin.com/in/levimcpherson",
-  "talks": ["2025"]
+  "role": "Founder, The Beast Syndicate; CEO, ArguX AI and Switch Point Strategies",
+  "photo": "images/speakers/levi_mcpherson.jpg",
+  "bio": "Levi McPherson is the Founder of The Beast Syndicate™ and CEO of ArguX AI and Switch Point Strategies. With more than 30 years of experience building and transforming companies, Levi has helped organizations achieve over $100 million in documented growth by aligning people, process, and performance systems.\n\nHe specializes in integrating AI technology with proven quality disciplines, helping teams evolve from static documentation to living systems of excellence that adapt and improve in real time. His frameworks have been applied across manufacturing, healthcare, and professional services to make operational excellence measurable, repeatable, and scalable.",
+  "linkedin": "https://www.linkedin.com/in/levimcpherson/",
+  "talks": [
+    "2025"
+  ]
 }
