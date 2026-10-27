@@ -27,6 +27,7 @@
                 <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
                 <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
                 <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
+                <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
                 <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register</a>
             </nav>
 
@@ -93,6 +94,7 @@
                         <li><a href="schedule.html" class="footer-link">Schedule</a></li>
                         <li><a href="speakers.html" class="footer-link">Speakers</a></li>
                         <li><a href="sponsors.html" class="footer-link">Sponsors</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
                     </ul>
                 </div>
                 <div>
@@ -180,9 +182,14 @@
                     ? `<img src="${speaker.photo}" alt="${speaker.name}" loading="lazy">`
                     : `<span class="speaker-monogram" aria-hidden="true">${initials(speaker.name)}</span>`;
 
-                const yearsHtml = (speaker.talks || []).length > 0
-                    ? `<span class="speaker-years">Spoke in ${speaker.talks.map(year => `<a href="schedule.html?year=${year}&speaker=${speaker.id}">${year}</a>`).join(', ')}</span>`
-                    : '<span></span>';
+                // Every talk they've given, linked to that year's schedule; a featured card already shows this year's
+                const history = (speaker.history || (speaker.talks || []).map(year => ({ year, title: `${year} forum` })))
+                    .filter(h => !(talk && h.year === talk.year && h.title === talk.title));
+                const historyHtml = history.length > 0
+                    ? `<ul class="speaker-history">${history.map(h => `
+                        <li><a href="schedule.html?year=${h.year}&speaker=${speaker.id}"><span class="history-year">${h.year}</span><span class="history-title">${h.title}</span></a></li>`).join('')}
+                       </ul>`
+                    : '';
 
                 const linkedinHtml = speaker.linkedin
                     ? `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="${speaker.name} on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>`
@@ -201,7 +208,8 @@
                     <h3 class="speaker-name">${speaker.name}</h3>
                     ${speaker.role ? `<p class="speaker-role">${speaker.role}</p>` : ''}
                     ${talkHtml}
-                    <div class="speaker-meta">${yearsHtml}${linkedinHtml}</div>
+                    ${historyHtml}
+                    ${linkedinHtml ? `<div class="speaker-meta">${linkedinHtml}</div>` : ''}
                     ${bioHtml}
                 `;
                 return card;

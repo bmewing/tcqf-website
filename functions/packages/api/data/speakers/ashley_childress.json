@@ -8,5 +8,15 @@
   "talks": [
     "2025",
     "2021"
+  ],
+  "history": [
+    {
+      "year": "2025",
+      "title": "Guided Discovery: Combining Bayesian Optimization with DOE for Material Discovery and Continuous Improvement"
+    },
+    {
+      "year": "2021",
+      "title": "What is Statistical Process Control?"
+    }
   ]
 }

@@ -7,5 +7,11 @@
   "linkedin": "https://www.linkedin.com/in/melalexander/",
   "talks": [
     "2023"
+  ],
+  "history": [
+    {
+      "year": "2023",
+      "title": "Applying Predictive Modeling and Computer Vision (CV) Tools Useful in Biomedicine and Public Health"
+    }
   ]
 }

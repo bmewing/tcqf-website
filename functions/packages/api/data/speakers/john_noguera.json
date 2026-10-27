@@ -7,5 +7,11 @@
   "linkedin": "https://www.linkedin.com/in/johnnoguera/",
   "talks": [
     "2021"
+  ],
+  "history": [
+    {
+      "year": "2021",
+      "title": "SPC for Autocorrelated Data Using Automated Time Series Forecasting"
+    }
   ]
 }
