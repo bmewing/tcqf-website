@@ -552,6 +552,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Interior page heading */
 .page-head {
     background-color: var(--mist);
+    background-image: url('../images/page-head-ridges.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
     border-bottom: 1px solid var(--rule);
     padding: 4rem 0 3.5rem;
 }
