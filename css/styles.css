@@ -1394,6 +1394,11 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.75rem;
     }
 
+    /* Keep the ridges and the circled peak below the wrapped intro text */
+    .page-head {
+        padding-bottom: 5.5rem;
+    }
+
     .hero {
         padding-top: 4rem;
         background-image:
