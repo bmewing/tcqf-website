@@ -557,7 +557,7 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center bottom;
     background-size: cover;
     border-bottom: 1px solid var(--rule);
-    padding: 4rem 0 3.5rem;
+    padding: 4rem 0 5.5rem;
 }
 
 .page-head h1 {
@@ -566,13 +566,6 @@ h1, h2, h3, h4, h5, h6 {
     font-stretch: normal;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
-}
-
-.page-head p {
-    font-size: 1.1875rem;
-    color: var(--muted);
-    max-width: 52ch;
 }
 
 /* Speakers Page */
@@ -1392,11 +1385,6 @@ h1, h2, h3, h4, h5, h6 {
 
     .section-title {
         font-size: 1.75rem;
-    }
-
-    /* Keep the ridges and the circled peak below the wrapped intro text */
-    .page-head {
-        padding-bottom: 5.5rem;
     }
 
     .hero {
