@@ -1190,6 +1190,143 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0.25rem;
 }
 
+/* ASQ Recertification Certificate */
+.ru-intro {
+    max-width: 68ch;
+    margin-bottom: 2.5rem;
+}
+
+.ru-form {
+    max-width: 960px;
+}
+
+.ru-field {
+    max-width: 480px;
+    margin-bottom: 3rem;
+}
+
+.ru-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--ink);
+    margin-bottom: 0.375rem;
+}
+
+.ru-input {
+    width: 100%;
+    font: inherit;
+    color: var(--ink);
+    background-color: var(--paper);
+    padding: 0.7rem 0.875rem;
+    border: 1px solid var(--muted);
+    border-radius: var(--radius);
+}
+
+.ru-input:disabled {
+    background-color: var(--mist);
+    border-color: var(--rule);
+    color: var(--muted);
+}
+
+.ru-input.verified {
+    border-color: var(--green-deep);
+    box-shadow: inset 0 0 0 1px var(--green-deep);
+}
+
+.ru-input.invalid {
+    border-color: #a33a1f;
+    box-shadow: inset 0 0 0 1px #a33a1f;
+}
+
+.ru-year-header {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.ru-year-header i {
+    color: var(--green-deep);
+    margin-right: 0.375rem;
+}
+
+.ru-sessions {
+    list-style: none;
+    border-top: 2px solid var(--ink);
+}
+
+.ru-session {
+    display: grid;
+    grid-template-columns: 10rem 1fr 15rem;
+    column-gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.ru-session-time {
+    font-weight: 650;
+    color: var(--green-deep);
+    font-variant-numeric: tabular-nums;
+}
+
+.ru-session-title {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    margin-bottom: 0.375rem;
+}
+
+.ru-session-speaker {
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+.ru-code-status {
+    min-height: 1.5rem;
+    margin-top: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.ru-code-status.verified {
+    color: var(--green-deep);
+}
+
+.ru-code-status.invalid {
+    color: #a33a1f;
+}
+
+.ru-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2rem;
+    padding-top: 2rem;
+}
+
+.ru-total {
+    font-size: 1.125rem;
+    color: var(--ink-soft);
+}
+
+.ru-total strong {
+    color: var(--ink);
+    font-size: 1.375rem;
+}
+
+.ru-summary .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ru-hint {
+    flex-basis: 100%;
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+.ru-hint:empty {
+    display: none;
+}
+
 .eb-widget-loader {
     display: flex;
     flex-direction: column;
@@ -1462,6 +1599,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .registration-container {
         padding: 1rem;
+    }
+
+    .ru-session {
+        grid-template-columns: 1fr;
+        row-gap: 0.5rem;
+    }
+
+    .ru-summary .btn {
+        flex: 1 1 100%;
     }
 
     .gallery-grid {

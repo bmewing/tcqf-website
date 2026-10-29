@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASQ Recertification Units - Tri-Cities Quality Forum Conference</title>
+    <meta name="description" content="Download a certificate of attendance for ASQ recertification units earned at the Tri-Cities Quality Forum.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header" id="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link" id="logo-nav-link">
+                <img src="images/logo-full.png" alt="Tri-Cities, TN-VA Quality Forum" class="logo-img" width="480" height="222">
+            </a>
+
+            <nav class="nav" id="main-navigation">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="schedule.html" class="nav-link" id="nav-schedule">Schedule</a>
+                <a href="speakers.html" class="nav-link" id="nav-speakers">Speakers</a>
+                <a href="sponsors.html" class="nav-link" id="nav-sponsors">Sponsors</a>
+                <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
+                <a href="register.html" class="btn btn-primary" id="header-cta-btn">Register</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-head">
+        <div class="container">
+            <h1>ASQ recertification units</h1>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section class="section">
+        <div class="container">
+            <div class="ru-intro prose">
+                <p>Each forum session earns <strong>0.1 ASQ Recertification Unit (RU)</strong>, up to <strong>0.4 RU</strong> for the full afternoon.</p>
+                <p>A session code is announced during each session. Enter your name and the code for each session you attended, then download your certificate of attendance. Keep it with the <a href="schedule.html?year=2026">forum program</a> for your recertification journal.</p>
+            </div>
+
+            <form class="ru-form" id="ru-form" novalidate>
+                <div class="ru-field">
+                    <label for="ru-name" class="ru-label">Your name, as it should appear on the certificate</label>
+                    <input type="text" id="ru-name" class="ru-input" autocomplete="name" required>
+                </div>
+
+                <h2 class="ru-year-header" id="ru-year-header"><i class="fa-regular fa-calendar-check"></i> Thursday, November 12, 2026, 1:00 PM - 5:00 PM ET</h2>
+
+                <!-- Loading State -->
+                <div class="eb-widget-loader" id="ru-loader">
+                    <div class="spinner"></div>
+                    <p>Fetching session data...</p>
+                </div>
+
+                <!-- Sessions, loaded dynamically via JavaScript -->
+                <ol class="ru-sessions" id="ru-sessions"></ol>
+
+                <div class="ru-summary">
+                    <p class="ru-total" id="ru-total" aria-live="polite"><strong>0.0 RU</strong> earned</p>
+                    <button type="submit" class="btn btn-primary" id="ru-download-btn" disabled>
+                        <i class="fa-solid fa-file-arrow-down"></i> Download certificate (PDF)
+                    </button>
+                    <p class="ru-hint" id="ru-hint">Enter your name and at least one session code.</p>
+                </div>
+            </form>
+
+            <div class="registration-note">
+                <p><i class="fa-solid fa-circle-question"></i> Missed a code or having trouble? Email <a href="mailto:info@tcqualityforum.com" class="text-link">info@tcqualityforum.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-row">
+                        <img src="images/logo.png" alt="TCQF Logo" class="footer-logo">
+                        <span class="footer-brand-title">Tri-Cities Quality Forum</span>
+                    </div>
+                    <p class="footer-desc">
+                        An annual afternoon of sessions on quality, leadership, and operational excellence, free to attendees nationwide.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="register.html" class="footer-link">Register</a></li>
+                        <li><a href="schedule.html" class="footer-link">Schedule</a></li>
+                        <li><a href="speakers.html" class="footer-link">Speakers</a></li>
+                        <li><a href="sponsors.html" class="footer-link">Sponsors</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-section-title">Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@tcqualityforum.com" class="footer-link">info@tcqualityforum.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Tri-Cities Region, TN/VA</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-video"></i>
+                        <span>Hosted virtually on Zoom</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tri-Cities Quality Forum. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', async () => {
+            // The forum this page issues certificates for. Session codes live in
+            // functions/packages/api/data/ru-codes/<year>.json, keyed "session 1",
+            // "session 2", ... in schedule order. A blank code keeps that session closed.
+            const FORUM_YEAR = '2026';
+            const FORUM_DATE = 'Thursday, November 12, 2026';
+            const SITE = 'tcqualityforum.com';
+            const RU_PER_SESSION = 0.1;
+
+            const form = document.getElementById('ru-form');
+            const nameInput = document.getElementById('ru-name');
+            const sessionList = document.getElementById('ru-sessions');
+            const loader = document.getElementById('ru-loader');
+            const totalEl = document.getElementById('ru-total');
+            const downloadBtn = document.getElementById('ru-download-btn');
+            const hintEl = document.getElementById('ru-hint');
+
+            // Helper to fetch data with local static file fallback
+            async function fetchAPI(endpoint, fallbackPath) {
+                try {
+                    const apiRes = await fetch(endpoint);
+                    if (apiRes.ok) {
+                        return await apiRes.json();
+                    }
+                    throw new Error(`API returned status ${apiRes.status}`);
+                } catch (err) {
+                    console.warn(`API fetch to ${endpoint} failed, falling back to static file ${fallbackPath}`, err);
+                    const fileRes = await fetch(fallbackPath);
+                    if (!fileRes.ok) throw new Error(`Static file fallback failed for ${fallbackPath}`);
+                    return await fileRes.json();
+                }
+            }
+
+            async function getSpeaker(speakerId) {
+                try {
+                    return await fetchAPI(
+                        `/api/data?type=speaker&id=${speakerId}`,
+                        `functions/packages/api/data/speakers/${speakerId}.json`
+                    );
+                } catch (e) {
+                    console.error(`Failed to load speaker info for: ${speakerId}`, e);
+                    return null;
+                }
+            }
+
+            // Codes match regardless of case, spaces, or punctuation
+            function normalizeCode(value) {
+                return String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            }
+
+            let sessions = [];
+
+            function attendedSessions() {
+                return sessions.filter(s => s.verified);
+            }
+
+            function updateSummary() {
+                const count = attendedSessions().length;
+                const name = nameInput.value.trim();
+                totalEl.innerHTML = `<strong>${(count * RU_PER_SESSION).toFixed(1)} RU</strong> earned, ${count} of ${sessions.length} sessions`;
+                downloadBtn.disabled = !(name && count);
+                if (!name && !count) {
+                    hintEl.textContent = 'Enter your name and at least one session code.';
+                } else if (!name) {
+                    hintEl.textContent = 'Enter your name to download your certificate.';
+                } else if (!count) {
+                    hintEl.textContent = 'Enter at least one session code.';
+                } else {
+                    hintEl.textContent = '';
+                }
+            }
+
+            function renderSessions() {
+                sessionList.innerHTML = sessions.map((s, i) => `
+                    <li class="ru-session">
+                        <span class="ru-session-time">${s.time}</span>
+                        <div class="ru-session-info">
+                            <h3 class="ru-session-title">${s.title}</h3>
+                            ${s.speakers.length ? `<p class="ru-session-speaker">${s.speakers.join(', ')}</p>` : ''}
+                        </div>
+                        <div class="ru-session-code">
+                            <label for="ru-code-${i}" class="ru-label">Session ${i + 1} code</label>
+                            <input type="text" id="ru-code-${i}" class="ru-input" data-index="${i}"
+                                autocomplete="off" autocapitalize="none" spellcheck="false"
+                                aria-describedby="ru-code-${i}-status"
+                                ${s.code ? '' : 'disabled placeholder="Not available yet"'}>
+                            <p class="ru-code-status" id="ru-code-${i}-status" aria-live="polite"></p>
+                        </div>
+                    </li>
+                `).join('');
+            }
+
+            function setStatus(index, showMismatch) {
+                const s = sessions[index];
+                const input = document.getElementById(`ru-code-${index}`);
+                const status = document.getElementById(`ru-code-${index}-status`);
+                s.verified = Boolean(s.code) && normalizeCode(input.value) === s.code;
+                input.classList.toggle('verified', s.verified);
+                const mismatch = showMismatch && !s.verified && input.value.trim() !== '';
+                input.classList.toggle('invalid', mismatch);
+                input.setAttribute('aria-invalid', mismatch ? 'true' : 'false');
+                if (s.verified) {
+                    status.className = 'ru-code-status verified';
+                    status.innerHTML = `<i class="fa-solid fa-circle-check"></i> Verified, ${RU_PER_SESSION.toFixed(1)} RU`;
+                } else if (mismatch) {
+                    status.className = 'ru-code-status invalid';
+                    status.textContent = "That code doesn't match. Check the spelling.";
+                } else {
+                    status.className = 'ru-code-status';
+                    status.textContent = '';
+                }
+            }
+
+            // The standard PDF fonts only cover Latin-1, so swap typographic punctuation
+            function pdfText(value) {
+                return String(value)
+                    .replace(/[‘’]/g, "'")
+                    .replace(/[“”]/g, '"')
+                    .replace(/[–—]/g, '-')
+                    .replace(/…/g, '...');
+            }
+
+            function loadImage(src) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.onerror = reject;
+                    img.src = src;
+                });
+            }
+
+            async function buildCertificate(name, attended) {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'letter' });
+                const W = doc.internal.pageSize.getWidth();
+                const H = doc.internal.pageSize.getHeight();
+                const cx = W / 2;
+                const ink = [34, 34, 34];
+                const muted = [92, 98, 95];
+                const green = [0, 162, 99];
+                const greenDeep = [0, 116, 74];
+                const rule = [220, 226, 222];
+
+                // Frame
+                doc.setDrawColor(...green);
+                doc.setLineWidth(3);
+                doc.rect(24, 24, W - 48, H - 48);
+                doc.setDrawColor(...rule);
+                doc.setLineWidth(0.75);
+                doc.rect(32, 32, W - 64, H - 64);
+
+                try {
+                    const logo = await loadImage('images/logo.png');
+                    doc.addImage(logo, 'PNG', cx - 24, 50, 48, 48);
+                } catch (e) {
+                    console.warn('Certificate logo failed to load', e);
+                }
+
+                let y = 120;
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(10);
+                doc.setTextColor(...greenDeep);
+                doc.text('TRI-CITIES QUALITY FORUM', cx, y, { align: 'center' });
+
+                y += 34;
+                doc.setFontSize(30);
+                doc.setTextColor(...ink);
+                doc.text('Certificate of Attendance', cx, y, { align: 'center' });
+
+                y += 30;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(12);
+                doc.setTextColor(...muted);
+                doc.text('This certifies that', cx, y, { align: 'center' });
+
+                y += 36;
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(26);
+                doc.setTextColor(...ink);
+                doc.text(pdfText(name), cx, y, { align: 'center' });
+                doc.setDrawColor(...green);
+                doc.setLineWidth(1);
+                doc.line(cx - 210, y + 10, cx + 210, y + 10);
+
+                y += 36;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(12);
+                doc.setTextColor(...ink);
+                const lead = `attended the following sessions of the ${FORUM_YEAR} Tri-Cities Quality Forum, held virtually on Zoom on ${FORUM_DATE}.`;
+                doc.splitTextToSize(lead, 520).forEach(line => {
+                    doc.text(line, cx, y, { align: 'center' });
+                    y += 16;
+                });
+
+                // Sessions attended
+                const left = 136;
+                const titleX = 262;
+                const titleWidth = W - titleX - left;
+                y += 8;
+                doc.setDrawColor(...rule);
+                doc.line(left, y, W - left, y);
+                y += 20;
+                attended.forEach(s => {
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(10.5);
+                    doc.setTextColor(...greenDeep);
+                    doc.text(pdfText(s.time), left, y);
+                    doc.setFontSize(11);
+                    doc.setTextColor(...ink);
+                    const titleLines = doc.splitTextToSize(pdfText(s.title), titleWidth);
+                    doc.text(titleLines, titleX, y);
+                    y += titleLines.length * 14;
+                    if (s.speakers.length) {
+                        doc.setFont('helvetica', 'normal');
+                        doc.setFontSize(10);
+                        doc.setTextColor(...muted);
+                        doc.text(pdfText(s.speakers.join(', ')), titleX, y);
+                        y += 14;
+                    }
+                    y += 8;
+                });
+                doc.line(left, y - 6, W - left, y - 6);
+
+                // Units earned
+                y += 18;
+                const total = (attended.length * RU_PER_SESSION).toFixed(1);
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(14);
+                doc.setTextColor(...ink);
+                doc.text(`${total} ASQ Recertification Units (RUs)`, cx, y, { align: 'center' });
+                y += 16;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                doc.setTextColor(...muted);
+                doc.text(`${RU_PER_SESSION.toFixed(1)} RU per session attended. Full program: ${SITE}/schedule.html?year=${FORUM_YEAR}`, cx, y, { align: 'center' });
+
+                // Footer
+                const issued = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                doc.setFontSize(9);
+                doc.text(`Issued ${issued}`, 48, H - 46);
+                doc.text(`${SITE}  |  info@${SITE}`, W - 48, H - 46, { align: 'right' });
+
+                const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                doc.save(`tcqf-${FORUM_YEAR}-certificate${slug ? `-${slug}` : ''}.pdf`);
+            }
+
+            try {
+                const [schedule, codes] = await Promise.all([
+                    fetchAPI(
+                        `/api/data?type=schedule&year=${FORUM_YEAR}`,
+                        `functions/packages/api/data/schedule/${FORUM_YEAR}.json`
+                    ),
+                    fetch(`functions/packages/api/data/ru-codes/${FORUM_YEAR}.json`, { cache: 'no-store' })
+                        .then(res => {
+                            if (!res.ok) throw new Error(`Session codes returned status ${res.status}`);
+                            return res.json();
+                        })
+                ]);
+
+                sessions = await Promise.all(schedule.map(async (session, index) => {
+                    const speakerIds = session.speakerIds || (session.speakerId ? [session.speakerId] : []);
+                    const speakers = (await Promise.all(speakerIds.map(getSpeaker))).filter(Boolean);
+                    return {
+                        time: session.time,
+                        title: session.title,
+                        speakers: speakers.map(sp => sp.name),
+                        code: normalizeCode(codes[`session ${index + 1}`]),
+                        verified: false
+                    };
+                }));
+
+                loader.style.display = 'none';
+                renderSessions();
+                updateSummary();
+            } catch (err) {
+                console.error('Error loading sessions:', err);
+                loader.innerHTML = '<p class="load-error"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load the session list. Please try again later.</p>';
+            }
+
+            sessionList.addEventListener('input', e => {
+                if (!e.target.matches('.ru-input')) return;
+                setStatus(Number(e.target.dataset.index), false);
+                updateSummary();
+            });
+
+            sessionList.addEventListener('change', e => {
+                if (!e.target.matches('.ru-input')) return;
+                setStatus(Number(e.target.dataset.index), true);
+                updateSummary();
+            });
+
+            nameInput.addEventListener('input', updateSummary);
+
+            form.addEventListener('submit', async e => {
+                e.preventDefault();
+                const name = nameInput.value.trim();
+                const attended = attendedSessions();
+                if (!name || !attended.length) return;
+                downloadBtn.disabled = true;
+                try {
+                    await buildCertificate(name, attended);
+                } catch (err) {
+                    console.error('Failed to build certificate:', err);
+                    hintEl.textContent = 'The certificate could not be created. Please try again or email info@tcqualityforum.com.';
+                } finally {
+                    downloadBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
