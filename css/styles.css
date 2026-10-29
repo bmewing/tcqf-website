@@ -774,7 +774,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .speaker-bio[open] summary::after {
-    content: '2';
+    content: '\2212';
 }
 
 .speaker-bio summary:hover {
