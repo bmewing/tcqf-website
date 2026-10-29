@@ -1,0 +1,17 @@
+{
+  "id": "craig_green",
+  "name": "Craig Green",
+  "role": "Infrastructure Portfolio Manager, Oak Ridge National Laboratory",
+  "photo": "images/speakers/craig_green.jpg",
+  "bio": "Craig Green spent the first two decades of his career masterminding the engineering, safety, and operational lifecycle of high-stakes, multi-million-dollar nuclear infrastructure portfolios. Today, he uses that heavy operational foundation to solve one of the biggest challenges facing modern enterprises: How do you deploy cutting-edge Artificial Intelligence into physical operations safely, predictably, and with zero room for error? As an Industrial Engineer and Portfolio Executive, he bridges the gap between emerging data technology and boots-on-the-ground reality. At Oak Ridge National Laboratory, he governs an annual infrastructure portfolio of up to $53 million while simultaneously architecting local, secure AI frameworks powered by NVIDIA Grace Blackwell architecture.",
+  "linkedin": "https://www.linkedin.com/in/craig-green-pmp-cssbb-3591719a/",
+  "talks": [
+    "2026"
+  ],
+  "history": [
+    {
+      "year": "2026",
+      "title": "Using AI to Build Processes"
+    }
+  ]
+}

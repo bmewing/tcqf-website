@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "time": "1:00 PM - 1:50 PM",
+    "track": "",
+    "title": "The Problem Solving Transmission: Making the Shift Happen",
+    "speakerIds": [
+      "phillip_thompson"
+    ],
+    "desc": "There are many well-known problem-solving tools. This session will help you understand the strengths of the most famous ones, and how to shift gears to find the cause as efficiently as possible."
+  },
+  {
+    "time": "2:00 PM - 2:50 PM",
+    "track": "",
+    "title": "Using AI to Build Processes",
+    "speakerIds": [
+      "craig_green"
+    ],
+    "desc": "This presentation will show how to use AI to build and improve processes, starting with the fundamentals of process design and process tiers. You’ll learn how large language models (LLMs) can help document workflows, clarify roles and handoffs, identify gaps, and develop practical process materials. The session will also cover how to guide AI with the right context and review its output for accuracy and usefulness. You’ll leave with a clearer understanding of where AI can help in process development and how to apply it in your own work."
+  },
+  {
+    "time": "3:00 PM - 3:50 PM",
+    "track": "",
+    "title": "Beyond Buy-In: Driving Change with Engagement That Matters",
+    "speakerIds": [
+      "michelle_stidwell"
+    ],
+    "desc": "How leaders stay present, resilient, and effective when circumstances shift unexpectedly, and how they get entire organizations to follow.\n\nReading what’s really happening. Not what the dashboard says or what people tell you in meetings, but what’s actually going on.\n\nStaying solid when everything else isn’t. We’ll practice the C.O.R.E. framework for self-regulation under pressure.\n\nSaying things that land. You’ll craft authentic stories that connect emotionally so your vision becomes their vision, not just a directive.\n\nExpect real scenarios, uncomfortable questions and a 30-day action plan you’ll actually use. This isn’t about getting buy-in. It’s about leading in a way that makes people want to follow."
+  },
+  {
+    "time": "4:00 PM - 4:50 PM",
+    "track": "",
+    "title": "Topic and presenter to be announced",
+    "speakerIds": [],
+    "desc": ""
+  }
+]
