@@ -3,9 +3,10 @@
   "name": "David J. McClaskey",
   "role": "President and Founder, McClaskey Excellence Institute",
   "photo": "images/speakers/david_mcclaskey.jpg",
-  "bio": "For the last 23 years, David is President, McClaskey Excellence Institute (formerly Pal’s Business Excellence Institute) where he teaches companies a proven path to go from ordinary to extraordinary operations.\n\nDavid McClaskey has over 50 years’ experience as an executive trainer, coach, consultant, conference presenter, and Baldrige expert.\n\nHe has trained over 15,000 leaders from all over the world in operations excellence, performance excellence or using Malcolm Baldrige National Quality Award criteria to improve.\n\nHe has led over 50 strategic planning sessions, helping organizations being proactive about their future\n\nHe is one of the few individuals to have the privilege of assisting seven companies to win eight Malcolm Baldrige National Quality Awards (United States National Award for companies that are national role models in leadership and management).\n\nCompanies he helped win the Baldrige Award include the only two restaurants to every win the Baldrige Award, Pal’s Sudden Service and K&N Management. He also worked with the Ritz-Carlton Hotel Company both times they won the Baldrige Award.\n\nHe has won many awards and recognitions and is a fellow of the American Society for Quality and the Institute of Industrial and Systems Engineers.",
+  "bio": "David McClaskey, for the last 27 years, has been President of the McClaskey Excellence Institute (formerly Pal’s Business Excellence Institute), teaching leaders a proven path to get their products and services 100% right, every time, through extraordinary operations. In a 55-year career as an executive trainer, coach, consultant, and Baldrige expert, he has worked with more than 15,000 leaders. David is one of the few to have helped seven companies win eight Malcolm Baldrige National Quality Awards, the nation’s highest honor for performance excellence. A Fellow of both ASQ and the Institute of Industrial and Systems Engineers, he also holds ASQ’s Lifetime Service Medal. Author of 100% Customer Delight, he is passionate about helping organizations become extraordinary so they delight every customer.",
   "linkedin": "https://www.linkedin.com/in/davidmcclaskey/",
   "talks": [
+    "2026",
     "2024",
     "2023",
     "2022",
@@ -15,6 +16,10 @@
     "2017"
   ],
   "history": [
+    {
+      "year": "2026",
+      "title": "The Price of “Good Enough”: Turning the Hidden Cost of Today’s Performance into a Business Case Leaders Can’t Ignore"
+    },
     {
       "year": "2024",
       "title": "Empower Employees Through Self-Management"

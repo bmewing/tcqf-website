@@ -29,8 +29,10 @@
   {
     "time": "4:00 PM - 4:50 PM",
     "track": "",
-    "title": "Topic and presenter to be announced",
-    "speakerIds": [],
-    "desc": ""
+    "title": "The Price of “Good Enough”: Turning the Hidden Cost of Today’s Performance into a Business Case Leaders Can’t Ignore",
+    "speakerIds": [
+      "david_mcclaskey"
+    ],
+    "desc": "What is “good enough” costing your organization? Most fall short not because people don’t care, but because they lack the systems, processes, and culture to deliver 100% of what customers require, every time. David McClaskey, who has guided organizations to eight Malcolm Baldrige National Quality Awards, shows how to quickly put a dollar figure on today’s errors, rework, and lost customers. When leaders see the cost of “good enough,” often millions, they don’t just buy in. They drive the effort, giving your team what it needs for lasting excellence."
   }
 ]
