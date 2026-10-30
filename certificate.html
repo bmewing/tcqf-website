@@ -365,7 +365,12 @@
                 doc.setFont('helvetica', 'normal');
                 doc.setFontSize(10);
                 doc.setTextColor(...muted);
-                doc.text(`${RU_PER_SESSION.toFixed(1)} RU per session attended. Full program: ${SITE}/schedule.html?year=${FORUM_YEAR}`, cx, y, { align: 'center' });
+                const lead = `${RU_PER_SESSION.toFixed(1)} RU per session attended. Full program: `;
+                const programUrl = `https://${SITE}/schedule.html?year=${FORUM_YEAR}`;
+                doc.text(lead + programUrl, cx, y, { align: 'center' });
+                // Explicit link annotation so viewers don't have to guess the URL from the text
+                const urlX = cx - doc.getTextWidth(lead + programUrl) / 2 + doc.getTextWidth(lead);
+                doc.link(urlX, y - 9, doc.getTextWidth(programUrl), 12, { url: programUrl });
 
                 // Footer
                 const issued = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
