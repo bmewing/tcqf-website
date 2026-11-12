@@ -15,7 +15,14 @@
     "speakerIds": [
       "craig_green"
     ],
-    "desc": "This presentation will show how to use AI to build and improve processes, starting with the fundamentals of process design and process tiers. You’ll learn how large language models (LLMs) can help document workflows, clarify roles and handoffs, identify gaps, and develop practical process materials. The session will also cover how to guide AI with the right context and review its output for accuracy and usefulness. You’ll leave with a clearer understanding of where AI can help in process development and how to apply it in your own work."
+    "desc": "This presentation will show how to use AI to build and improve processes, starting with the fundamentals of process design and process tiers. You’ll learn how large language models (LLMs) can help document workflows, clarify roles and handoffs, identify gaps, and develop practical process materials. The session will also cover how to guide AI with the right context and review its output for accuracy and usefulness. You’ll leave with a clearer understanding of where AI can help in process development and how to apply it in your own work.",
+    "materials": [
+      {
+        "type": "supplemental",
+        "label": "Supplemental content: GPT instructions (PDF)",
+        "url": "content/2026/Craig_Green_GPTinstructions.pdf"
+      }
+    ]
   },
   {
     "time": "3:00 PM - 3:50 PM",
